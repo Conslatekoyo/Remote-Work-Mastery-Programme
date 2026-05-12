@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ARWMP — African Remote Work Mastery Program | 54Links</title>
+<meta name="description" content="Master Remote Work. Get Hired Globally. Build from Africa. A 4-week intensive program by 54Links for African professionals across all 54 AU member states."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="icon" id="faviconTag" type="image/png" href=""/>
+<link rel="apple-touch-icon" id="appleTouchIcon" href=""/>
+
+<style>
+/* ════════════════════════════════════════
+   CSS CUSTOM PROPERTIES
+════════════════════════════════════════ */
+:root {
+  --teal:         #03647C;
+  --teal-mid:     #358396;
+  --teal-light:   #D6EDF2;
+  --teal-dark:    #024d5e;
+  --orange:       #F36E24;
+  --orange-light: #FAC5A7;
+  --dark:         #1A2A35;
+  --body-text:    #4A5A65;
+  --light-bg:     #F5F7F8;
+  --white:        #FFFFFF;
+  --card-bg:      #FFFFFF;
+  --nav-bg:       rgba(255,255,255,0.97);
+  --border:       #e2eaed;
+  --shadow:       0 2px 16px rgba(3,100,124,0.09);
+  --shadow-lg:    0 10px 40px rgba(3,100,124,0.15);
+  --heading:      #1A2A35;
+  --section-alt:  #EEF5F8;
+  --input-bg:     #FFFFFF;
+  --input-border: #c8d8de;
+  --placeholder:  #8fa8b2;
+}
+[data-theme="dark"] {
+  --light-bg:     #0a1a22;
+  --white:        #0d1e27;
+  --card-bg:      #1a2e3a;
+  --nav-bg:       rgba(10,26,34,0.97);
+  --border:       #1e3545;
+  --shadow:       0 2px 16px rgba(0,0,0,0.30);
+  --shadow-lg:    0 10px 40px rgba(0,0,0,0.45);
+  --heading:      #e8f4f7;
+  --body-text:    #8ab5c2;
+  --section-alt:  #0d1e27;
+  --dark:         #e8f4f7;
+  --input-bg:     #132230;
+  --input-border: #1e3a4a;
+  --placeholder:  #3a5a6a;
+  --teal-light:   #0d2d38;
+}
+
+/* ════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--light-bg);
+  color: var(--body-text);
+  line-height: 1.65;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: var(--teal); transition: color 0.2s; }
+a:hover { color: var(--orange); }
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Syne', sans-serif;
+  color: var(--heading);
+  line-height: 1.15;
+  font-weight: 700;
+}
+h1 { font-size: clamp(1.9rem, 4.5vw, 3.6rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3.2vw, 2.4rem); }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.4rem); }
+h4 { font-size: 1rem; }
+p  { color: var(--body-text); }
+
+/* ════════════════════════════════════════
+   PAGE SYSTEM (SPA)
+════════════════════════════════════════ */
+.page { display: none; animation: pageFade 0.35s ease; }
+.page.active { display: block; }
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════
+   NAVIGATION
+════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  height: 68px;
+  display: flex; align-items: center;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  gap: 1rem;
+  transition: background 0.3s;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; flex-shrink: 0; text-decoration: none;
+}
+.nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
+.nav-logo-text {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--teal);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 0.1rem;
+  margin-left: auto;
+}
+.nav-links a {
+  font-size: 0.82rem; font-weight: 500; color: var(--heading);
+  padding: 0.4rem 0.65rem; border-radius: 6px; cursor: pointer;
+  transition: background 0.2s, color 0.2s; white-space: nowrap;
+}
+.nav-links a:hover { background: var(--teal-light); color: var(--teal); }
+.nav-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.btn-nav-enrol {
+  background: var(--orange); color: #fff;
+  padding: 0.5rem 1.1rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.82rem; font-family: 'Syne', sans-serif;
+  border: none; cursor: pointer; white-space: nowrap;
+  transition: background 0.2s, transform 0.15s; line-height: 1;
+}
+.btn-nav-enrol:hover { background: #d55e1a; transform: translateY(-1px); }
+.theme-btn {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--teal-light); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--teal); font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s; flex-shrink: 0;
+}
+.theme-btn:hover { background: var(--teal); color: #fff; }
+.ham-btn {
+  display: none; width: 38px; height: 38px; border-radius: 8px;
+  background: var(--teal-light); border: none; cursor: pointer;
+  align-items: center; justify-content: center;
+  color: var(--teal); font-size: 1rem; flex-shrink: 0;
+}
+
+/* Mobile Menu */
+.mobile-nav {
+  display: none; position: fixed;
+  top: 68px; left: 0; right: 0; bottom: 0;
+  z-index: 999; background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem; overflow-y: auto;
+  flex-direction: column; gap: 0.25rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-weight: 500; font-size: 1rem; color: var(--heading);
+  padding: 0.85rem 1rem; border-radius: 10px; display: flex;
+  align-items: center; gap: 0.75rem; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-nav a i { width: 18px; color: var(--teal); }
+.mobile-nav a:hover { background: var(--teal-light); color: var(--teal); }
+.mobile-nav .mobile-enrol {
+  background: var(--orange); color: #fff; justify-content: center;
+  font-weight: 700; font-family: 'Syne', sans-serif;
+  margin-top: 1rem; font-size: 1rem;
+}
+.mobile-nav .mobile-enrol:hover { background: #d55e1a; }
+.mobile-nav .mobile-enrol i { color: #fff; }
+
+/* ════════════════════════════════════════
+   PAGE TOP OFFSET
+════════════════════════════════════════ */
+.page-top { padding-top: 68px; }
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+  background: var(--teal);
+  position: relative; overflow: hidden;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem) clamp(3rem, 7vw, 5rem);
+  min-height: min(88vh, 750px);
+  display: flex; align-items: center;
+}
+.hero-pattern {
+  position: absolute; right: -60px; top: 0; bottom: 0;
+  width: 52%; opacity: 0.1; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem);
+  align-items: center; width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.15); color: #fff;
+  padding: 0.4rem 1rem; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+  margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.2);
+}
+.hero h1 { color: #fff; margin-bottom: 1.1rem; }
+.hero h1 span { color: var(--orange); }
+.hero-lead { color: rgba(255,255,255,0.85); font-size: clamp(0.95rem, 2vw, 1.1rem); margin-bottom: 1.75rem; max-width: 520px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; margin-bottom: 2rem; }
+.hero-meta-item {
+  display: flex; align-items: center; gap: 0.45rem;
+  color: rgba(255,255,255,0.88); font-size: 0.85rem;
+}
+.hero-meta-item i { color: var(--orange); font-size: 0.9rem; width: 16px; }
+.hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+/* Hero card */
+.hero-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px; padding: 1.75rem;
+}
+.hero-card h3 { color: #fff; margin-bottom: 1.25rem; font-size: 1.05rem; }
+.track-item-hero {
+  display: flex; align-items: flex-start; gap: 0.875rem;
+  padding: 0.85rem; border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 0.625rem;
+  transition: background 0.2s;
+}
+.track-item-hero:hover { background: rgba(255,255,255,0.15); }
+.track-icon-wrap {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 0.9rem; color: #fff;
+}
+.track-item-hero h4 { color: #fff; font-size: 0.88rem; margin-bottom: 0.1rem; }
+.track-item-hero p { color: rgba(255,255,255,0.68); font-size: 0.77rem; }
+.hero-price-chip {
+  margin-top: 1.1rem; padding: 1rem;
+  border-radius: 10px;
+  background: rgba(243,110,36,0.2);
+  border: 1px solid rgba(243,110,36,0.4);
+  text-align: center;
+}
+.hero-price-chip span { color: rgba(255,255,255,0.78); font-size: 0.8rem; display: block; margin-bottom: 0.15rem; }
+.hero-price-chip strong { color: #fff; font-family: 'Syne', sans-serif; font-size: 1.85rem; font-weight: 800; display: block; }
+.hero-price-chip small { color: rgba(255,255,255,0.65); font-size: 0.75rem; }
+
+/* ════════════════════════════════════════
+   STATS BAR
+════════════════════════════════════════ */
+.stats-bar {
+  background: var(--dark);
+  padding: clamp(1.25rem, 4vw, 1.75rem) clamp(1rem, 5vw, 2rem);
+}
+[data-theme="dark"] .stats-bar { background: #060e13; border-bottom: 1px solid var(--border); }
+.stats-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+}
+.stat-item { text-align: center; padding: 0.5rem; }
+.stat-num {
+  font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800; color: var(--orange); display: block; line-height: 1.1;
+}
+.stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 500; display: block; margin-top: 0.2rem; }
+
+/* ════════════════════════════════════════
+   SECTION LAYOUT
+════════════════════════════════════════ */
+.section {
+  padding: clamp(3rem, 8vw, 5.5rem) clamp(1rem, 5vw, 2rem);
+}
+.section-alt { background: var(--section-alt); }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 0.6rem;
+}
+.section-eyebrow::before {
+  content: ''; display: block; width: 20px; height: 2px; background: var(--orange);
+}
+.section-heading { margin-bottom: 0.75rem; }
+.section-lead {
+  max-width: 600px; font-size: clamp(0.9rem, 2vw, 1.05rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem); color: var(--body-text);
+}
+.centered { text-align: center; }
+.centered .section-eyebrow { justify-content: center; }
+.centered .section-eyebrow::before { display: none; }
+.centered .section-lead { margin-left: auto; margin-right: auto; }
+
+/* ════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  border: none; cursor: pointer; border-radius: 10px;
+  transition: all 0.2s; text-align: center; justify-content: center;
+  text-decoration: none; font-size: clamp(0.85rem, 2vw, 0.95rem);
+  padding: clamp(0.65rem, 2vw, 0.85rem) clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1;
+}
+.btn-orange  { background: var(--orange); color: #fff; }
+.btn-orange:hover { background: #d55e1a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(243,110,36,0.35); color: #fff; }
+.btn-outline-white {
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+.btn-teal  { background: var(--teal); color: #fff; }
+.btn-teal:hover { background: var(--teal-dark); transform: translateY(-1px); color: #fff; }
+.btn-teal-outline {
+  background: var(--teal-light); color: var(--teal);
+  border: 2px solid var(--teal);
+}
+.btn-teal-outline:hover { background: var(--teal); color: #fff; }
+.btn-full { width: 100%; }
+
+/* ════════════════════════════════════════
+   CARDS — VALUE PROPS
+════════════════════════════════════════ */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 3vw, 1.5rem); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 1.5rem); }
+.prop-card {
+  background: var(--card-bg); border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.prop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.prop-icon-wrap {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--teal-light); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem; color: var(--teal); font-size: 1.25rem;
+}
+.prop-card h3 { margin-bottom: 0.5rem; font-size: clamp(0.95rem, 2vw, 1.1rem); }
+.prop-card p  { font-size: clamp(0.82rem, 1.8vw, 0.9rem); }
+
+/* ════════════════════════════════════════
+   TRACK CARDS
+════════════════════════════════════════ */
+.track-card {
+  background: var(--card-bg); border-radius: 18px;
+  border: 1px solid var(--border); overflow: hidden;
+  box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s;
+}
+.track-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.track-card-head {
+  background: var(--teal); padding: 1.5rem;
+  position: relative; overflow: hidden;
+}
+.track-card-head::after {
+  content: ''; position: absolute; right: -16px; top: -16px;
+  width: 90px; height: 90px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+.track-big-letter {
+  position: absolute; right: 1rem; top: 0.5rem;
+  font-family: 'Syne', sans-serif; font-size: 3.5rem;
+  font-weight: 800; color: rgba(255,255,255,0.13); line-height: 1;
+}
+.track-tag-chip {
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--orange); background: rgba(243,110,36,0.2);
+  padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.5rem;
+}
+.track-card-head h3 { color: #fff; font-size: 1.15rem; }
+.track-card-head p  { color: rgba(255,255,255,0.72); font-size: 0.82rem; margin-top: 0.25rem; }
+.track-card-body { padding: 1.25rem 1.5rem; }
+.track-feat-list { list-style: none; }
+.track-feat-list li {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  padding: 0.35rem 0; font-size: 0.87rem; color: var(--body-text);
+  border-bottom: 1px solid var(--border);
+}
+.track-feat-list li:last-child { border-bottom: none; }
+.track-feat-list li i { color: var(--teal); margin-top: 3px; flex-shrink: 0; font-size: 0.78rem; }
+.track-card-footer { padding: 0 1.5rem 1.5rem; }
+
+/* ════════════════════════════════════════
+   STEPS
+════════════════════════════════════════ */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 3vw, 1.5rem); position: relative;
+}
+.steps-grid::before {
+  content: ''; position: absolute;
+  top: 38px; left: 13%; right: 13%; height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  z-index: 0;
+}
+.step-card {
+  background: var(--card-bg); border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 1.25rem;
+  text-align: center; border: 1px solid var(--border);
+  box-shadow: var(--shadow); position: relative; z-index: 1;
+}
+.step-num {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--teal); color: #fff;
+  font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.875rem;
+}
+.step-card h4 { margin-bottom: 0.4rem; font-size: 0.95rem; }
+.step-card p  { font-size: 0.82rem; }
+
+/* ════════════════════════════════════════
+   MODULE CARDS
+════════════════════════════════════════ */
+.modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.875rem, 2.5vw, 1.25rem); }
+.module-card {
+  background: var(--card-bg); border-radius: 14px;
+  border: 1px solid var(--border); padding: 1.35rem;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.module-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.module-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; background: var(--teal);
+}
+.module-card.track-specific::before { background: var(--orange); }
+.module-card.high-pri::before { background: var(--orange); }
+.module-top {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 0.6rem;
+}
+.mod-num { font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; }
+.mod-num.orange { color: var(--orange); }
+.week-pill {
+  font-size: 0.68rem; font-weight: 600; padding: 0.18rem 0.5rem;
+  border-radius: 4px; background: var(--teal-light); color: var(--teal);
+}
+.module-card h4 { font-size: 0.95rem; margin-bottom: 0.6rem; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chip {
+  font-size: 0.66rem; font-weight: 600; padding: 0.18rem 0.5rem;
+  border-radius: 4px; border: 1px solid; display: inline-flex; align-items: center; gap: 0.25rem;
+}
+.chip-teal  { background: rgba(3,100,124,0.08); color: var(--teal); border-color: rgba(3,100,124,0.2); }
+.chip-orange { background: rgba(243,110,36,0.1); color: var(--orange); border-color: rgba(243,110,36,0.3); }
+.chip-note { font-size: 0.74rem; color: var(--placeholder); margin-top: 0.4rem; }
+
+/* ════════════════════════════════════════
+   CAPSTONE
+════════════════════════════════════════ */
+.capstone-block {
+  background: var(--teal); border-radius: 20px;
+  padding: clamp(2rem, 5vw, 3rem); margin-top: 3rem;
+  position: relative; overflow: hidden;
+}
+.capstone-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(243,110,36,0.25); padding: 0.3rem 0.875rem;
+  border-radius: 999px; margin-bottom: 0.875rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--orange);
+}
+.capstone-block h3 { color: #fff; font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: 0.4rem; }
+.capstone-block > p { color: rgba(255,255,255,0.8); margin-bottom: 1.75rem; font-size: 0.92rem; }
+.capstone-tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.75rem, 2vw, 1.25rem); }
+.cap-track-card {
+  background: rgba(255,255,255,0.1); border-radius: 12px;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.cap-track-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.cap-track-card ul { list-style: none; }
+.cap-track-card ul li {
+  color: rgba(255,255,255,0.82); font-size: 0.83rem;
+  padding: 0.3rem 0; display: flex; align-items: flex-start; gap: 0.5rem;
+}
+.cap-track-card ul li i { color: var(--orange); font-size: 0.72rem; margin-top: 4px; flex-shrink: 0; }
+.cap-cert {
+  margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 10px; padding: 0.875rem 1.25rem;
+}
+.cap-cert i { color: var(--orange); font-size: 1.2rem; }
+.cap-cert span { color: #fff; font-size: 0.88rem; }
+.cap-cert strong { color: #fff; }
+
+/* ════════════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════════════ */
+.testimonial-card {
+  background: var(--card-bg); border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.stars { color: var(--orange); font-size: 0.85rem; margin-bottom: 0.875rem; letter-spacing: 1px; }
+.testimonial-card p {
+  font-size: 0.9rem; font-style: italic; line-height: 1.75;
+  margin-bottom: 1.25rem; color: var(--body-text);
+}
+.t-author { display: flex; align-items: center; gap: 0.75rem; }
+.t-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--teal); color: #fff; font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.t-author-name { font-size: 0.85rem; font-weight: 600; color: var(--heading); display: block; }
+.t-author-sub  { font-size: 0.76rem; color: var(--body-text); }
+
+/* ════════════════════════════════════════
+   CTA BANNER
+════════════════════════════════════════ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--teal) 0%, #024d5e 55%, #1a2a35 100%);
+  padding: clamp(3rem, 8vw, 5.5rem) clamp(1rem, 5vw, 2rem);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-banner h2 { color: #fff; margin: 0 auto 0.875rem; max-width: 700px; }
+.cta-banner p  { color: rgba(255,255,255,0.78); margin-bottom: 2rem; font-size: clamp(0.9rem, 2vw, 1.05rem); }
+.cta-actions   { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.875rem; }
+
+/* ════════════════════════════════════════
+   ABOUT PAGE — HERO
+════════════════════════════════════════ */
+.page-hero-banner {
+  background: var(--teal); text-align: center;
+  padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1rem, 5vw, 2rem) clamp(3rem, 7vw, 4.5rem);
+}
+.page-hero-banner h1 { color: #fff; margin-bottom: 0.75rem; }
+.page-hero-banner p  { color: rgba(255,255,255,0.8); font-size: clamp(0.9rem, 2vw, 1.1rem); max-width: 600px; margin: 0 auto; }
+
+/* ════════════════════════════════════════
+   INFO CARDS
+════════════════════════════════════════ */
+.info-card {
+  background: var(--card-bg); border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.info-card h3 { margin-bottom: 0.875rem; font-size: clamp(1rem, 2vw, 1.2rem); display: flex; align-items: center; gap: 0.6rem; }
+.info-card h3 i { color: var(--teal); }
+.schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.sched-item { background: var(--teal-light); border-radius: 10px; padding: 0.875rem; }
+.sched-item span  { font-size: 0.7rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.15rem; }
+.sched-item strong { font-size: 0.85rem; color: var(--heading); display: block; }
+.delivery-bar { display: flex; border-radius: 8px; overflow: hidden; height: 10px; margin: 0.875rem 0 0.5rem; }
+.d-live  { background: var(--teal); flex: 0 0 60%; }
+.d-async { background: var(--orange); flex: 0 0 40%; }
+.legend-row { display: flex; gap: 1.5rem; font-size: 0.8rem; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 0.3rem; }
+.feat-list { list-style: none; }
+.feat-list li { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.35rem 0; font-size: 0.88rem; }
+.feat-list li i { color: var(--teal); margin-top: 3px; font-size: 0.78rem; flex-shrink: 0; }
+
+/* ════════════════════════════════════════
+   TRACK FULL DETAIL (Career Tracks page)
+════════════════════════════════════════ */
+.track-detail-card {
+  background: var(--card-bg); border-radius: 18px;
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.tdh { background: var(--teal); padding: clamp(1.5rem, 4vw, 2rem); display: flex; align-items: flex-start; gap: 1.5rem; }
+.tdh.orange { background: var(--orange); }
+.tdh.mid { background: var(--teal-mid); }
+.td-big-icon { width: 70px; height: 70px; border-radius: 14px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #fff; flex-shrink: 0; }
+.tdh h2 { color: #fff; margin-bottom: 0.3rem; font-size: clamp(1.2rem, 3vw, 1.6rem); }
+.tdh p  { color: rgba(255,255,255,0.78); font-size: 0.88rem; }
+.td-body { padding: clamp(1.25rem, 3vw, 2rem); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.td-col h4 { font-size: 0.85rem; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.td-col h4 i { font-size: 0.8rem; }
+.td-col h4.orange { color: var(--orange); }
+.td-items { list-style: none; }
+.td-items li { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.35rem 0; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+.td-items li:last-child { border-bottom: none; }
+.td-items li i { color: var(--teal); font-size: 0.75rem; margin-top: 4px; flex-shrink: 0; }
+.td-items li i.orange { color: var(--orange); }
+
+/* ════════════════════════════════════════
+   HOW IT WORKS — TIMELINE
+════════════════════════════════════════ */
+.timeline-wrap { position: relative; padding-left: 3rem; }
+.timeline-wrap::before {
+  content: ''; position: absolute;
+  left: 1.2rem; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, var(--teal), var(--orange));
+}
+.tl-item { position: relative; margin-bottom: 2rem; }
+.tl-dot {
+  position: absolute; left: -2.85rem; top: 0.2rem;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal); border: 3px solid var(--card-bg);
+  display: flex; align-items: center; justify-content: center;
+}
+.tl-dot i { color: #fff; font-size: 0.65rem; }
+.tl-dot.orange { background: var(--orange); }
+.tl-card { background: var(--card-bg); border-radius: 14px; padding: 1.35rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.tl-week { font-size: 0.7rem; font-weight: 700; color: var(--orange); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.tl-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+.tl-card p  { font-size: 0.84rem; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+.tl-tag { font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px; background: var(--teal-light); color: var(--teal); font-weight: 500; }
+.tl-tag.orange { background: rgba(243,110,36,0.1); color: var(--orange); }
+.tool-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tool-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 4px; background: var(--teal-light); color: var(--teal); font-weight: 500; border: 1px solid rgba(3,100,124,0.15); }
+
+/* ════════════════════════════════════════
+   FAQ
+════════════════════════════════════════ */
+.faq-wrap { max-width: 780px; margin: 0 auto; }
+.faq-item {
+  border: 1px solid var(--border); border-radius: 12px;
+  margin-bottom: 0.75rem; overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-item.open { box-shadow: var(--shadow); }
+.faq-q {
+  padding: clamp(1rem, 3vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  cursor: pointer; background: var(--card-bg);
+  font-weight: 600; color: var(--heading); font-size: clamp(0.85rem, 2vw, 0.95rem);
+  transition: background 0.2s;
+}
+.faq-q:hover { background: var(--teal-light); }
+.faq-icon { color: var(--teal); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  display: none; padding: 0 clamp(1rem, 3vw, 1.5rem) 1.1rem;
+  background: var(--card-bg); font-size: 0.88rem; line-height: 1.75;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════ */
+.contact-method {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: var(--card-bg); border-radius: 12px;
+  padding: 1.1rem 1.25rem; border: 1px solid var(--border);
+  margin-bottom: 0.875rem;
+}
+.cmethod-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--teal-light); display: flex; align-items: center; justify-content: center;
+  color: var(--teal); font-size: 1rem; flex-shrink: 0;
+}
+.cmethod-icon.orange { background: rgba(243,110,36,0.1); color: var(--orange); }
+.cmethod-label { font-size: 0.75rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem; }
+.cmethod-val { font-size: 0.9rem; color: var(--heading); }
+.social-row { display: flex; gap: 0.625rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.social-link-btn {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--body-text); font-size: 0.95rem;
+  transition: all 0.2s; text-decoration: none; cursor: pointer;
+}
+.social-link-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+/* ════════════════════════════════════════
+   ENROL / PAYMENT
+════════════════════════════════════════ */
+.enrol-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.pay-sidebar { position: sticky; top: 84px; }
+.pay-card { background: var(--card-bg); border-radius: 20px; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.price-hero { background: var(--teal); border-radius: 14px; padding: clamp(1.1rem, 3vw, 1.5rem); text-align: center; margin-bottom: 1.5rem; }
+.price-hero span  { color: rgba(255,255,255,0.78); font-size: 0.8rem; display: block; margin-bottom: 0.15rem; }
+.price-hero strong { color: #fff; font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 800; display: block; }
+.price-hero small  { color: rgba(255,255,255,0.65); font-size: 0.76rem; }
+.prog-summary { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.prog-summary h4 { font-size: 0.82rem; color: var(--body-text); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.prog-row { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+.prog-row:last-child { border-bottom: none; }
+.prog-row span  { color: var(--body-text); }
+.prog-row strong { color: var(--heading); text-align: right; }
+.pay-methods-label { font-size: 0.78rem; font-weight: 700; color: var(--body-text); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.875rem; }
+.pay-btn {
+  width: 100%; padding: clamp(0.8rem, 2vw, 0.95rem);
+  border-radius: 10px; border: none; cursor: pointer;
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  margin-bottom: 0.75rem; transition: all 0.2s;
+}
+.pay-btn-flw   { background: var(--orange); color: #fff; }
+.pay-btn-flw:hover { background: #d55e1a; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(243,110,36,0.35); }
+.pay-btn-paypal { background: #003087; color: #fff; }
+.pay-btn-paypal:hover { background: #002060; transform: translateY(-1px); }
+.pay-btn-email { background: var(--teal-light); color: var(--teal); border: 2px solid var(--teal); }
+.pay-btn-email:hover { background: var(--teal); color: #fff; }
+.pay-divider { text-align: center; color: var(--placeholder); font-size: 0.75rem; margin: 0.625rem 0; position: relative; }
+.pay-divider::before, .pay-divider::after { content: ''; position: absolute; top: 50%; width: 38%; height: 1px; background: var(--border); }
+.pay-divider::before { left: 0; } .pay-divider::after { right: 0; }
+.method-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; justify-content: center; }
+.method-chip { font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 4px; background: var(--teal-light); color: var(--teal); font-weight: 500; border: 1px solid rgba(3,100,124,0.12); }
+.secure-note { display: flex; align-items: center; justify-content: center; gap: 0.35rem; font-size: 0.74rem; color: var(--placeholder); margin-top: 0.875rem; }
+.email-support { background: var(--teal-light); border-radius: 12px; padding: 1rem 1.1rem; margin-top: 1rem; border: 1px solid rgba(3,100,124,0.12); }
+.email-support h4 { font-size: 0.82rem; color: var(--teal); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem; }
+.email-support p { font-size: 0.78rem; margin-bottom: 0.35rem; }
+.email-support a { font-size: 0.8rem; font-weight: 600; color: var(--teal); word-break: break-all; }
+
+/* ════════════════════════════════════════
+   FORMS
+════════════════════════════════════════ */
+.form-card { background: var(--card-bg); border-radius: 20px; padding: clamp(1.25rem, 4vw, 2.5rem); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.form-card h3 { margin-bottom: 0.4rem; }
+.form-card > p { font-size: 0.87rem; margin-bottom: 1.75rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.875rem, 2.5vw, 1.25rem); }
+.fg { display: flex; flex-direction: column; gap: 0.35rem; }
+.fg.full { grid-column: 1 / -1; }
+label { font-size: 0.78rem; font-weight: 600; color: var(--heading); display: flex; align-items: center; gap: 0.3rem; }
+label i { color: var(--teal); font-size: 0.75rem; }
+.req { color: var(--orange); }
+input, select, textarea {
+  background: var(--input-bg); border: 1.5px solid var(--input-border);
+  border-radius: 8px; padding: clamp(0.6rem, 2vw, 0.75rem) 0.875rem;
+  font-size: clamp(0.83rem, 2vw, 0.9rem); color: var(--heading);
+  font-family: 'DM Sans', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+  -webkit-appearance: none; appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(3,100,124,0.1);
+}
+select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234A5A65' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.875rem center; padding-right: 2.5rem; }
+textarea { resize: vertical; min-height: 100px; }
+.word-ct { font-size: 0.72rem; color: var(--placeholder); text-align: right; }
+.check-row { display: flex; align-items: flex-start; gap: 0.75rem; }
+.check-row input[type="checkbox"] { width: auto; min-width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0; -webkit-appearance: checkbox; appearance: checkbox; }
+.check-row label { font-size: 0.82rem; font-weight: 400; color: var(--body-text); cursor: pointer; }
+.alert { padding: 0.875rem 1.1rem; border-radius: 10px; margin-bottom: 1.1rem; font-size: 0.83rem; display: none; align-items: center; gap: 0.5rem; }
+.alert.show { display: flex; }
+.alert-error   { background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.25); color: #dc2626; }
+.alert-success { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.25); color: #16a34a; }
+
+/* ════════════════════════════════════════
+   SUCCESS SCREEN
+════════════════════════════════════════ */
+.success-screen { display: none; text-align: center; padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
+.success-screen.show { display: block; }
+.success-icon-wrap { width: 80px; height: 80px; border-radius: 50%; background: rgba(22,163,74,0.12); border: 2px solid rgba(22,163,74,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 2rem; color: #16a34a; }
+.success-screen h2 { margin-bottom: 0.875rem; }
+.success-screen p  { margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5vw, 2rem) 2rem; }
+[data-theme="dark"] footer { background: #060e13; border-top: 1px solid var(--border); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: clamp(2rem, 5vw, 3rem); }
+.footer-brand-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 0.875rem; }
+.footer-brand-logo span { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; }
+.footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.75; max-width: 260px; }
+.footer-col h5 { color: #fff; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.footer-col a { display: block; color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-bottom: 0.55rem; cursor: pointer; transition: color 0.2s; }
+.footer-col a:hover { color: var(--orange); }
+.footer-social { display: flex; gap: 0.625rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.footer-social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 0.85rem; transition: all 0.2s; text-decoration: none; }
+.footer-social-link:hover { background: var(--orange); color: #fff; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: space-between; }
+.footer-bottom p { color: rgba(255,255,255,0.38); font-size: 0.76rem; }
+.footer-bottom a { color: rgba(255,255,255,0.38); font-size: 0.76rem; }
+.footer-bottom a:hover { color: var(--orange); }
+
+/* ════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1024px)
+════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-card  { display: none; }
+  .hero { min-height: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .enrol-grid  { grid-template-columns: 1fr; }
+  .pay-sidebar { position: static; }
+  .capstone-tracks { grid-template-columns: 1fr; gap: 0.75rem; }
+  .td-body { grid-template-columns: 1fr; gap: 1rem; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid::before { display: none; }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 900px)
+════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .btn-nav-enrol { display: none; }
+  .ham-btn { display: flex; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .modules-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-2col { grid-template-columns: 1fr; }
+  .tdh { flex-direction: column; gap: 1rem; }
+  .td-big-icon { width: 56px; height: 56px; font-size: 1.3rem; }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 640px)
+════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .grid-3        { grid-template-columns: 1fr; }
+  .grid-2        { grid-template-columns: 1fr; }
+  .modules-grid  { grid-template-columns: 1fr; }
+  .steps-grid    { grid-template-columns: 1fr; }
+  .footer-grid   { grid-template-columns: 1fr; }
+  .stats-inner   { grid-template-columns: repeat(2, 1fr); }
+  .form-grid     { grid-template-columns: 1fr; }
+  .schedule-grid { grid-template-columns: 1fr 1fr; }
+  .hero-ctas     { flex-direction: column; align-items: flex-start; }
+  .cta-actions   { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 360px; justify-content: center; }
+  .hero-meta     { gap: 0.75rem 1.25rem; }
+  .legend-row    { flex-direction: column; gap: 0.4rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .timeline-wrap { padding-left: 2.25rem; }
+  .tl-dot        { left: -2.1rem; width: 24px; height: 24px; }
+  .social-row    { gap: 0.5rem; }
+  .faq-q         { align-items: flex-start; }
+}
+
+/* ════════════════════════════════════════
+   UTILITY
+════════════════════════════════════════ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.contact-2col { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(2rem, 5vw, 3rem); align-items: start; }
+.mt-lg { margin-top: clamp(1.5rem, 4vw, 2.5rem); }
+.stack { display: flex; flex-direction: column; gap: clamp(1rem, 3vw, 1.5rem); }
+.divider { height: 1px; background: var(--border); margin: clamp(1.5rem, 4vw, 2rem) 0; }
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════ -->
+<nav id="mainNav">
+  <div class="nav-logo" onclick="go('home')">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="8"  width="65" height="13" rx="6.5" fill="#03647C"/>
+      <rect x="8"  y="26" width="78" height="13" rx="6.5" fill="#03647C"/>
+      <rect x="10" y="44" width="72" height="13" rx="6.5" fill="#03647C"/>
+      <rect x="20" y="62" width="42" height="13" rx="6.5" fill="#F36E24"/>
+      <rect x="16" y="80" width="36" height="13" rx="6.5" fill="#03647C"/>
+    </svg>
+    <span class="nav-logo-text">54Links</span>
+  </div>
+
+  <nav class="nav-links">
+    <a onclick="go('home')"></i> Home</a>
+    <a onclick="go('about')">About</a>
+    <a onclick="go('curriculum')">Curriculum</a>
+    <a onclick="go('tracks')">Career Tracks</a>
+    <a onclick="go('howitworks')">How It Works</a>
+    <a onclick="go('faq')">FAQ</a>
+    <a onclick="go('contact')">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <button class="btn-nav-enrol" onclick="go('enrol')">
+      <i class="fa-solid fa-arrow-right"></i> Enrol — $1,100
+    </button>
+    <button class="ham-btn" onclick="toggleMenu()" aria-label="Menu">
+      <i class="fa-solid fa-bars" id="hamIcon"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="go('home')"><i class="fa-solid fa-house"></i> Home</a>
+  <a onclick="go('about')"><i class="fa-solid fa-circle-info"></i> About the Program</a>
+  <a onclick="go('curriculum')"><i class="fa-solid fa-book-open"></i> Curriculum</a>
+  <a onclick="go('tracks')"><i class="fa-solid fa-road"></i> Career Tracks</a>
+  <a onclick="go('howitworks')"><i class="fa-solid fa-list-check"></i> How It Works</a>
+  <a onclick="go('faq')"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  <a onclick="go('contact')"><i class="fa-solid fa-envelope"></i> Contact</a>
+  <a class="mobile-enrol" onclick="go('enrol')"><i class="fa-solid fa-graduation-cap"></i> Enrol Now — $1,100</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════════════ -->
+<div id="page-home" class="page active page-top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <svg class="hero-pattern" viewBox="0 0 500 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <rect x="60"  y="20"  width="390" height="65" rx="32" fill="white"/>
+      <rect x="20"  y="120" width="450" height="65" rx="32" fill="white"/>
+      <rect x="40"  y="220" width="420" height="65" rx="32" fill="white"/>
+      <rect x="100" y="320" width="300" height="65" rx="32" fill="white"/>
+      <rect x="80"  y="420" width="240" height="65" rx="32" fill="white"/>
+      <rect x="120" y="520" width="170" height="65" rx="32" fill="white"/>
+      <rect x="150" y="615" width="110" height="50" rx="25" fill="white"/>
+    </svg>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <i class="fa-solid fa-globe"></i>
+          Pan-African · All 54 AU Member States
+        </div>
+        <h1>Master Remote Work.<br/><span>Build from Africa.</span></h1>
+        <p class="hero-lead">A 4-week intensive program for African professionals ready to compete and thrive in the global remote economy.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fa-regular fa-calendar"></i> June 7 – July 3, 2025</div>
+          <div class="hero-meta-item"><i class="fa-solid fa-layer-group"></i> 4 Weeks · 9 Modules</div>
+          <div class="hero-meta-item"><i class="fa-solid fa-video"></i> Fully Virtual</div>
+          <div class="hero-meta-item"><i class="fa-solid fa-certificate"></i> Certificate Included</div>
+        </div>
+        <div class="hero-ctas">
+          <button class="btn btn-orange" onclick="go('enrol')">
+            <i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100
+          </button>
+          <button class="btn btn-outline-white" onclick="go('curriculum')">
+            <i class="fa-solid fa-book-open"></i> View Curriculum
+          </button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3><i class="fa-solid fa-road" style="color:var(--orange);margin-right:0.4rem;"></i> Choose Your Career Track</h3>
+        <div class="track-item-hero">
+          <div class="track-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+          <div><h4>Track A — Remote Employment</h4><p>Get hired by global companies from anywhere in Africa</p></div>
+        </div>
+        <div class="track-item-hero">
+          <div class="track-icon-wrap"><i class="fa-solid fa-rocket"></i></div>
+          <div><h4>Track B — Freelancing</h4><p>Build a thriving freelance business on global platforms</p></div>
+        </div>
+        <div class="track-item-hero">
+          <div class="track-icon-wrap"><i class="fa-solid fa-seedling"></i></div>
+          <div><h4>Track C — Entrepreneurship</h4><p>Launch your remote-first African venture</p></div>
+        </div>
+        <div class="hero-price-chip">
+          <span>Full Program Investment</span>
+          <strong>$1,100 USD</strong>
+          <small>One-time fee · Certificate included</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label"><i class="fa-solid fa-calendar-week"></i> Weeks Intensive</span></div>
+      <div class="stat-item"><span class="stat-num">9</span><span class="stat-label"><i class="fa-solid fa-layer-group"></i> Expert Modules</span></div>
+      <div class="stat-item"><span class="stat-num">54</span><span class="stat-label"><i class="fa-solid fa-globe-africa"></i> African Countries</span></div>
+      <div class="stat-item"><span class="stat-num">3</span><span class="stat-label"><i class="fa-solid fa-road"></i> Career Tracks</span></div>
+    </div>
+  </div>
+
+  <!-- Value Props -->
+  <div class="section">
+    <div class="container">
+      <div class="section-eyebrow"><i class="fa-solid fa-star"></i> Why ARWMP</div>
+      <h2 class="section-heading">Africa's Most Comprehensive<br/>Remote Work Program</h2>
+      <p class="section-lead">Designed specifically for the African professional — addressing real barriers, real tools, and real opportunities in the global remote market.</p>
+      <div class="grid-3">
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-globe-africa"></i></div><h3>Pan-African by Design</h3><p>Built for professionals across all 54 AU member states. Every strategy is tailored to the African context.</p></div>
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-certificate"></i></div><h3>Certified Excellence</h3><p>Earn a globally recognised ARWMP Certificate of Completion from 54Links — proof of your global readiness.</p></div>
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-robot"></i></div><h3>AI-Powered Edge</h3><p>A dedicated module on AI for Productivity — ChatGPT, Claude, Gemini — so you leverage what global competitors use daily.</p></div>
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-coins"></i></div><h3>Income Systems</h3><p>Learn Wise, Payoneer, Flutterwave, and professional invoicing. Get paid globally, keep more of what you earn.</p></div>
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-people-group"></i></div><h3>Accountability Groups</h3><p>8–12 person cohorts, peer check-ins, and dedicated Slack channels. You won't do this alone.</p></div>
+        <div class="prop-card reveal"><div class="prop-icon-wrap"><i class="fa-solid fa-microphone-lines"></i></div><h3>Live Expert Sessions</h3><p>Every Friday, a guest speaker — an African remote work professional who has done what you're aiming to do.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tracks Overview -->
+  <div class="section section-alt">
+    <div class="container">
+      <div class="section-eyebrow"><i class="fa-solid fa-road"></i> Career Tracks</div>
+      <h2 class="section-heading">Three Paths to Global Success</h2>
+      <p class="section-lead">From Module 4, your learning diverges into a track built around your specific career goal.</p>
+      <div class="grid-3">
+        <div class="track-card reveal">
+          <div class="track-card-head">
+            <span class="track-big-letter">A</span>
+            <div class="track-tag-chip">Track A</div>
+            <h3>Remote Employment</h3>
+            <p>Get hired by global companies</p>
+          </div>
+          <div class="track-card-body">
+            <ul class="track-feat-list">
+              <li><i class="fa-solid fa-check"></i> ATS-optimised resume & LinkedIn</li>
+              <li><i class="fa-solid fa-check"></i> Remote job platform mastery</li>
+              <li><i class="fa-solid fa-check"></i> Interview prep & mock sessions</li>
+              <li><i class="fa-solid fa-check"></i> 10 real remote job applications</li>
+              <li><i class="fa-solid fa-check"></i> Digital portfolio & pitch video</li>
+            </ul>
+          </div>
+          <div class="track-card-footer">
+            <button class="btn btn-teal-outline btn-full" onclick="go('tracks')"><i class="fa-solid fa-arrow-right"></i> Learn More</button>
+          </div>
+        </div>
+        <div class="track-card reveal">
+          <div class="track-card-head">
+            <span class="track-big-letter">B</span>
+            <div class="track-tag-chip">Track B</div>
+            <h3>Freelancing</h3>
+            <p>Build a global client base</p>
+          </div>
+          <div class="track-card-body">
+            <ul class="track-feat-list">
+              <li><i class="fa-solid fa-check"></i> Upwork & Fiverr profile optimisation</li>
+              <li><i class="fa-solid fa-check"></i> Winning proposals & pricing</li>
+              <li><i class="fa-solid fa-check"></i> Professional invoicing & contracts</li>
+              <li><i class="fa-solid fa-check"></i> 5 real freelance proposals</li>
+              <li><i class="fa-solid fa-check"></i> Live profiles + pitch video</li>
+            </ul>
+          </div>
+          <div class="track-card-footer">
+            <button class="btn btn-teal-outline btn-full" onclick="go('tracks')"><i class="fa-solid fa-arrow-right"></i> Learn More</button>
+          </div>
+        </div>
+        <div class="track-card reveal">
+          <div class="track-card-head">
+            <span class="track-big-letter">C</span>
+            <div class="track-tag-chip">Track C</div>
+            <h3>Remote Entrepreneurship</h3>
+            <p>Launch your remote-first venture</p>
+          </div>
+          <div class="track-card-body">
+            <ul class="track-feat-list">
+              <li><i class="fa-solid fa-check"></i> Business Model Canvas</li>
+              <li><i class="fa-solid fa-check"></i> 10-slide investor pitch deck</li>
+              <li><i class="fa-solid fa-check"></i> Market entry strategy</li>
+              <li><i class="fa-solid fa-check"></i> Landing page + investor outreach</li>
+              <li><i class="fa-solid fa-check"></i> 5-min pitch video for Demo Day</li>
+            </ul>
+          </div>
+          <div class="track-card-footer">
+            <button class="btn btn-teal-outline btn-full" onclick="go('tracks')"><i class="fa-solid fa-arrow-right"></i> Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="section">
+    <div class="container">
+      <div class="centered">
+        <div class="section-eyebrow"><i class="fa-solid fa-list-ol"></i> The Journey</div>
+        <h2 class="section-heading">From Application to Global Career</h2>
+        <p class="section-lead">Four simple steps stand between you and your remote work breakthrough.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal"><div class="step-num">1</div><h4><i class="fa-solid fa-file-pen" style="color:var(--orange);margin-right:0.35rem;"></i>Apply</h4><p>Fill out your application and select your career track.</p></div>
+        <div class="step-card reveal"><div class="step-num">2</div><h4><i class="fa-solid fa-credit-card" style="color:var(--orange);margin-right:0.35rem;"></i>Enrol & Pay</h4><p>Secure your spot with a single $1,100 payment via Flutterwave or PayPal.</p></div>
+        <div class="step-card reveal"><div class="step-num">3</div><h4><i class="fa-solid fa-chalkboard-user" style="color:var(--orange);margin-right:0.35rem;"></i>Learn & Build</h4><p>4 weeks of live sessions, async work, mentorship, and accountability.</p></div>
+        <div class="step-card reveal"><div class="step-num">4</div><h4><i class="fa-solid fa-graduation-cap" style="color:var(--orange);margin-right:0.35rem;"></i>Graduate & Launch</h4><p>Demo Day, certificate, and your career fully activated.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="section section-alt">
+    <div class="container">
+      <div class="centered">
+        <div class="section-eyebrow"><i class="fa-solid fa-comments"></i> Community Voice</div>
+        <h2 class="section-heading">What African Professionals Are Saying</h2>
+        <p class="section-lead">Real results from professionals across the continent.</p>
+      </div>
+      <div class="grid-3">
+        <div class="testimonial-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"The program gave me the structure and confidence to finally land my first remote job — with a US-based company, earning in USD. This is life-changing."</p>
+          <div class="t-author"><div class="t-avatar">AO</div><div><span class="t-author-name">Amara Owusu</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track A · Accra, Ghana</span></div></div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Within 3 weeks of completing Track B, I had signed two international clients on Upwork. The proposals framework is pure gold. Worth every dollar."</p>
+          <div class="t-author"><div class="t-avatar">FK</div><div><span class="t-author-name">Fatima Kone</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track B · Nairobi, Kenya</span></div></div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"The AI module alone was worth the investment. I now use Claude and ChatGPT daily to 3× my productivity. The accountability group kept me going."</p>
+          <div class="t-author"><div class="t-avatar">TC</div><div><span class="t-author-name">Tendai Chuma</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track C · Harare, Zimbabwe</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Your Global Remote Career Starts in Africa.<br/>Starts with 54Links.</h2>
+      <p><i class="fa-regular fa-calendar" style="color:var(--orange);"></i> June 7 – July 3, 2025 &nbsp;·&nbsp; <i class="fa-solid fa-video" style="color:var(--orange);"></i> Fully Virtual &nbsp;·&nbsp; <i class="fa-solid fa-globe-africa" style="color:var(--orange);"></i> All 54 African Countries</p>
+      <div class="cta-actions">
+        <button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button>
+        <button class="btn btn-outline-white" onclick="go('about')"><i class="fa-solid fa-circle-info"></i> Learn More About ARWMP</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <svg width="30" height="30" viewBox="0 0 100 100"><rect x="15" y="8" width="65" height="13" rx="6.5" fill="white"/><rect x="8" y="26" width="78" height="13" rx="6.5" fill="white"/><rect x="10" y="44" width="72" height="13" rx="6.5" fill="white"/><rect x="20" y="62" width="42" height="13" rx="6.5" fill="#F36E24"/><rect x="16" y="80" width="36" height="13" rx="6.5" fill="white"/></svg>
+          <span>54Links</span>
+        </div>
+        <p>Powering Africa's Business Connections. Connecting professionals, founders, and teams across all 54 African nations.</p>
+        <div class="footer-social">
+          <a class="footer-social-link" href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="footer-social-link" href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a class="footer-social-link" href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a class="footer-social-link" href="mailto:54Linksremoteworkmastery@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Program</h5>
+        <a onclick="go('about')"><i class="fa-solid fa-circle-info" style="width:14px;color:var(--orange);"></i> About ARWMP</a>
+        <a onclick="go('curriculum')"><i class="fa-solid fa-book-open" style="width:14px;color:var(--orange);"></i> Curriculum</a>
+        <a onclick="go('tracks')"><i class="fa-solid fa-road" style="width:14px;color:var(--orange);"></i> Career Tracks</a>
+        <a onclick="go('howitworks')"><i class="fa-solid fa-list-check" style="width:14px;color:var(--orange);"></i> How It Works</a>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <a onclick="go('faq')"><i class="fa-solid fa-circle-question" style="width:14px;color:var(--orange);"></i> FAQ</a>
+        <a onclick="go('contact')"><i class="fa-solid fa-envelope" style="width:14px;color:var(--orange);"></i> Contact Us</a>
+        <a href="mailto:54Linksremoteworkmastery@gmail.com"><i class="fa-solid fa-at" style="width:14px;color:var(--orange);"></i> Email Us</a>
+        <a onclick="go('enrol')"><i class="fa-solid fa-graduation-cap" style="width:14px;color:var(--orange);"></i> Apply Now</a>
+      </div>
+      <div class="footer-col">
+        <h5>54Links</h5>
+        <a href="https://www.54links.com" target="_blank"><i class="fa-solid fa-globe" style="width:14px;color:var(--orange);"></i> www.54links.com</a>
+        <a href="mailto:54Linksremoteworkmastery@gmail.com"><i class="fa-solid fa-envelope" style="width:14px;color:var(--orange);"></i> ARWMP Enquiries</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 54Links. All rights reserved. | African Remote Work Mastery Program</p>
+      <a href="https://www.54links.com" target="_blank">www.54links.com</a>
+    </div>
+  </footer>
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════════════ -->
+<div id="page-about" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>About the Program</h1>
+    <p>Everything you need to know about the African Remote Work Mastery Program and the mission behind it.</p>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-eyebrow"><i class="fa-solid fa-circle-info"></i> What is ARWMP</div>
+          <h2 class="section-heading">Africa's Premier Remote Work Intensive</h2>
+          <p style="margin-bottom:1.1rem;">The African Remote Work Mastery Program (ARWMP) is a 4-week, fully virtual intensive program designed to equip African professionals with the skills, tools, mindset, and networks to compete and thrive in the global remote work economy.</p>
+          <p style="margin-bottom:1.1rem;">From remote job hunting to freelancing on global platforms to launching remote-first African ventures, ARWMP gives you the exact roadmap — Africa-specific strategy built for real challenges.</p>
+          <p style="margin-bottom:1.75rem;">Delivered by 54Links — the pan-African professional networking platform <em>Powering Africa's Business Connections.</em></p>
+          <div class="info-card">
+            <h3><i class="fa-solid fa-users"></i> Who It's For</h3>
+            <p style="margin-bottom:0.875rem;font-size:0.88rem;">Early-career to mid-level African professionals across all 54 AU member states who are ready to:</p>
+            <ul class="feat-list">
+              <li><i class="fa-solid fa-check-circle"></i> Break into global remote employment</li>
+              <li><i class="fa-solid fa-check-circle"></i> Build a serious freelance income</li>
+              <li><i class="fa-solid fa-check-circle"></i> Launch a remote-first entrepreneurial venture</li>
+              <li><i class="fa-solid fa-check-circle"></i> Transition from traditional to remote work</li>
+              <li><i class="fa-solid fa-check-circle"></i> Upskill with AI tools and global work standards</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-bullseye"></i> Program Goals</h3>
+            <ul class="feat-list" style="margin-top:0.5rem;">
+              <li><i class="fa-solid fa-arrow-right"></i> Equip participants with a world-class remote professional mindset</li>
+              <li><i class="fa-solid fa-arrow-right"></i> Master tools used by top global remote teams</li>
+              <li><i class="fa-solid fa-arrow-right"></i> Build a track-specific career or business strategy</li>
+              <li><i class="fa-solid fa-arrow-right"></i> Launch with real deliverables on Demo Day</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3><i class="fa-solid fa-video"></i> Delivery Format</h3>
+            <div class="delivery-bar"><div class="d-live"></div><div class="d-async"></div></div>
+            <div class="legend-row" style="margin-bottom:1.1rem;">
+              <span><span class="legend-dot" style="background:var(--teal);"></span>60% Live (Zoom)</span>
+              <span><span class="legend-dot" style="background:var(--orange);"></span>40% Async (Google Classroom)</span>
+            </div>
+            <div class="schedule-grid">
+              <div class="sched-item"><span><i class="fa-solid fa-play"></i> Live Sessions</span><strong>Mon–Fri, 10–12 PM EAT</strong></div>
+              <div class="sched-item"><span><i class="fa-regular fa-clock"></i> Duration</span><strong>120 mins per session</strong></div>
+              <div class="sched-item"><span><i class="fa-solid fa-laptop"></i> Async Work</span><strong>~60 mins afternoons</strong></div>
+              <div class="sched-item"><span><i class="fa-solid fa-chalkboard-user"></i> Office Hours</span><strong>Wed, 4–5 PM EAT</strong></div>
+              <div class="sched-item"><span><i class="fa-solid fa-people-group"></i> Group Size</span><strong>8–12 per cohort</strong></div>
+              <div class="sched-item"><span><i class="fa-solid fa-microphone-lines"></i> Guest Speakers</span><strong>Every Friday</strong></div>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3><i class="fa-solid fa-link"></i> About 54Links</h3>
+            <p style="font-size:0.88rem;margin-bottom:0.75rem;">54Links is a pan-African business networking platform — <strong>Bold. Rooted. Boundless.</strong> — connecting founders, professionals, and teams across Africa to discover each other, collaborate across borders, and build meaningful ventures together.</p>
+            <p style="font-size:0.88rem;">ARWMP is 54Links' flagship education program, fulfilling the mission: <strong><i class="fa-solid fa-bolt" style="color:var(--orange);"></i> Powering Africa's Business Connections.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner"><div class="container">
+    <h2>Ready to Transform Your Career?</h2>
+    <p><i class="fa-regular fa-calendar" style="color:var(--orange);"></i> Join the next cohort — June 7 to July 3, 2025</p>
+    <div class="cta-actions">
+      <button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button>
+      <button class="btn btn-outline-white" onclick="go('curriculum')"><i class="fa-solid fa-book-open"></i> View Full Curriculum</button>
+    </div>
+  </div></div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved. | <a href="mailto:54Linksremoteworkmastery@gmail.com">54Linksremoteworkmastery@gmail.com</a></p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: CURRICULUM
+══════════════════════════════════════════════ -->
+<div id="page-curriculum" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>Curriculum</h1>
+    <p>9 modules + a Capstone Project — designed to take you from awareness to action in 4 weeks.</p>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="section-eyebrow"><i class="fa-solid fa-book-open"></i> The Modules</div>
+      <h2 class="section-heading">9 Modules. 4 Weeks. One Transformation.</h2>
+      <p class="section-lead">Modules 1–3 and 5–9 are universal to all tracks. Module 4 diverges based on your chosen career path from Week 2.</p>
+      <div class="modules-grid">
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 01</span><span class="week-pill">Week 1</span></div><h4>Remote Work Foundations</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 02</span><span class="week-pill">Week 1</span></div><h4>Tools Mastery (Hands-On)</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 03</span><span class="week-pill">Week 2</span></div><h4>Global Work Readiness</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card track-specific reveal" style="border-color:var(--orange);"><div class="module-top"><span class="mod-num orange"><i class="fa-solid fa-road"></i> MODULE 04</span><span class="week-pill" style="background:rgba(243,110,36,0.1);color:var(--orange);">Week 2</span></div><h4>Career Pathways</h4><div class="badge-row"><span class="chip chip-orange"><i class="fa-solid fa-road"></i> Track-Specific</span></div><p class="chip-note"><i class="fa-solid fa-info-circle"></i> A: Jobs · B: Freelance · C: Venture</p></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 05</span><span class="week-pill">Week 2</span></div><h4>Income Systems &amp; Finance</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 06</span><span class="week-pill">Week 3</span></div><h4>Productivity &amp; Self-Management</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card high-pri reveal" style="border-color:var(--orange);"><div class="module-top"><span class="mod-num orange"><i class="fa-solid fa-robot"></i> MODULE 07</span><span class="week-pill">Week 3</span></div><h4>AI for Productivity</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span><span class="chip chip-orange"><i class="fa-solid fa-fire"></i> High Priority</span></div></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 08</span><span class="week-pill">Week 3</span></div><h4>Personal Branding &amp; Visibility</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+        <div class="module-card reveal"><div class="module-top"><span class="mod-num"><i class="fa-solid fa-circle-dot"></i> MODULE 09</span><span class="week-pill">Week 4</span></div><h4>Job &amp; Client Acquisition</h4><div class="badge-row"><span class="chip chip-teal"><i class="fa-solid fa-users"></i> All Tracks</span></div></div>
+      </div>
+
+      <!-- Capstone -->
+      <div class="capstone-block">
+        <div class="capstone-label"><i class="fa-solid fa-trophy"></i> Program Finale</div>
+        <h3>Capstone Project + Demo Day</h3>
+        <p>Final 5 days of Week 4 — all participants present their work to mentors, partners, and guests at a virtual Demo Day on the final Friday.</p>
+        <div class="capstone-tracks">
+          <div class="cap-track-card">
+            <div class="cap-track-label"><i class="fa-solid fa-briefcase"></i> Track A Deliverables</div>
+            <ul><li><i class="fa-solid fa-arrow-right"></i>10 real remote job applications</li><li><i class="fa-solid fa-arrow-right"></i>ATS-optimised resume</li><li><i class="fa-solid fa-arrow-right"></i>Digital portfolio</li><li><i class="fa-solid fa-arrow-right"></i>5-minute pitch video</li></ul>
+          </div>
+          <div class="cap-track-card">
+            <div class="cap-track-label"><i class="fa-solid fa-rocket"></i> Track B Deliverables</div>
+            <ul><li><i class="fa-solid fa-arrow-right"></i>5 real freelance proposals</li><li><i class="fa-solid fa-arrow-right"></i>Live Upwork/Fiverr profiles</li><li><i class="fa-solid fa-arrow-right"></i>Professional invoice</li><li><i class="fa-solid fa-arrow-right"></i>5-minute pitch video</li></ul>
+          </div>
+          <div class="cap-track-card">
+            <div class="cap-track-label"><i class="fa-solid fa-seedling"></i> Track C Deliverables</div>
+            <ul><li><i class="fa-solid fa-arrow-right"></i>Business Model Canvas</li><li><i class="fa-solid fa-arrow-right"></i>10-slide pitch deck</li><li><i class="fa-solid fa-arrow-right"></i>Landing page live</li><li><i class="fa-solid fa-arrow-right"></i>5 investor outreach messages</li><li><i class="fa-solid fa-arrow-right"></i>5-minute pitch video</li></ul>
+          </div>
+        </div>
+        <div class="cap-cert">
+          <i class="fa-solid fa-certificate"></i>
+          <span><strong>ARWMP Certificate of Completion</strong> — issued by 54Links upon program completion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner"><div class="container">
+    <h2>9 Modules Designed to Launch You.</h2>
+    <p>Seats are limited. Secure your place in the June 2025 cohort.</p>
+    <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
+  </div></div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: CAREER TRACKS
+══════════════════════════════════════════════ -->
+<div id="page-tracks" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>Career Tracks</h1>
+    <p>From Module 4 onwards, your ARWMP journey is tailored to your specific career goal.</p>
+  </div>
+  <div class="section">
+    <div class="container stack">
+      <div class="track-detail-card reveal">
+        <div class="tdh"><div class="td-big-icon"><i class="fa-solid fa-briefcase"></i></div><div><div class="track-tag-chip" style="background:rgba(255,255,255,0.2);color:white;">Track A</div><h2>Remote Employment</h2><p>Get hired by top global companies — with a strategy built for Africa.</p></div></div>
+        <div class="td-body">
+          <div class="td-col"><h4><i class="fa-solid fa-list-check"></i> From Module 4</h4><ul class="td-items"><li><i class="fa-solid fa-check"></i>Build an ATS-optimised resume</li><li><i class="fa-solid fa-check"></i>Master remote job platforms</li><li><i class="fa-solid fa-check"></i>Mock interview preparation</li><li><i class="fa-solid fa-check"></i>Develop your Remote Work Value Proposition</li></ul></div>
+          <div class="td-col"><h4 class="orange"><i class="fa-solid fa-trophy"></i> Capstone Deliverables</h4><ul class="td-items"><li><i class="fa-solid fa-arrow-right orange"></i>10 real job applications submitted</li><li><i class="fa-solid fa-arrow-right orange"></i>ATS resume + polished LinkedIn</li><li><i class="fa-solid fa-arrow-right orange"></i>Digital portfolio live</li><li><i class="fa-solid fa-arrow-right orange"></i>5-minute Demo Day pitch video</li></ul></div>
+        </div>
+      </div>
+      <div class="track-detail-card reveal">
+        <div class="tdh orange"><div class="td-big-icon"><i class="fa-solid fa-rocket"></i></div><div><div class="track-tag-chip" style="background:rgba(255,255,255,0.2);color:white;">Track B</div><h2>Freelancing</h2><p>Build a global client base from wherever you are in Africa.</p></div></div>
+        <div class="td-body">
+          <div class="td-col"><h4><i class="fa-solid fa-list-check"></i> From Module 4</h4><ul class="td-items"><li><i class="fa-solid fa-check"></i>Optimised Upwork & Fiverr profiles</li><li><i class="fa-solid fa-check"></i>Winning client proposals</li><li><i class="fa-solid fa-check"></i>Profitable pricing strategy</li><li><i class="fa-solid fa-check"></i>Professional invoicing systems</li></ul></div>
+          <div class="td-col"><h4 class="orange"><i class="fa-solid fa-trophy"></i> Capstone Deliverables</h4><ul class="td-items"><li><i class="fa-solid fa-arrow-right orange"></i>5 real freelance proposals submitted</li><li><i class="fa-solid fa-arrow-right orange"></i>Live Upwork and Fiverr profiles</li><li><i class="fa-solid fa-arrow-right orange"></i>Professional invoice template</li><li><i class="fa-solid fa-arrow-right orange"></i>5-minute Demo Day pitch video</li></ul></div>
+        </div>
+      </div>
+      <div class="track-detail-card reveal">
+        <div class="tdh mid"><div class="td-big-icon"><i class="fa-solid fa-seedling"></i></div><div><div class="track-tag-chip" style="background:rgba(255,255,255,0.2);color:white;">Track C</div><h2>Remote Entrepreneurship</h2><p>Launch your remote-first African venture from idea to investor-ready.</p></div></div>
+        <div class="td-body">
+          <div class="td-col"><h4><i class="fa-solid fa-list-check"></i> From Module 4</h4><ul class="td-items"><li><i class="fa-solid fa-check"></i>Business Model Canvas</li><li><i class="fa-solid fa-check"></i>Investor-grade pitch deck</li><li><i class="fa-solid fa-check"></i>Market entry strategy</li><li><i class="fa-solid fa-check"></i>Landing page & brand design</li></ul></div>
+          <div class="td-col"><h4 class="orange"><i class="fa-solid fa-trophy"></i> Capstone Deliverables</h4><ul class="td-items"><li><i class="fa-solid fa-arrow-right orange"></i>Completed Business Model Canvas</li><li><i class="fa-solid fa-arrow-right orange"></i>10-slide investor pitch deck</li><li><i class="fa-solid fa-arrow-right orange"></i>Landing page live</li><li><i class="fa-solid fa-arrow-right orange"></i>5 investor/partner outreach messages</li><li><i class="fa-solid fa-arrow-right orange"></i>5-minute Demo Day pitch video</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner"><div class="container">
+    <h2>Which Track Will You Choose?</h2>
+    <p>All three paths lead to the same place — global impact from Africa.</p>
+    <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
+  </div></div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026
+     54Links. All rights reserved.</p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: HOW IT WORKS
+══════════════════════════════════════════════ -->
+<div id="page-howitworks" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>How It Works</h1>
+    <p>Four weeks. Structured for maximum impact. Here's exactly what your ARWMP journey looks like.</p>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;" class="about-grid">
+        <div>
+          <div class="section-eyebrow"><i class="fa-solid fa-calendar-days"></i> Week by Week</div>
+          <h2 class="section-heading" style="margin-bottom:2rem;">Your 4-Week Journey</h2>
+          <div class="timeline-wrap">
+            <div class="tl-item"><div class="tl-dot"><i class="fa-solid fa-1"></i></div><div class="tl-card"><div class="tl-week"><i class="fa-regular fa-calendar"></i> Week 1 — Foundation</div><h4>Build Your Remote Foundation</h4><p style="font-size:0.84rem;">Remote mindset, workspace setup, and hands-on tools mastery for the global environment.</p><div class="tl-tags"><span class="tl-tag">Module 1: Remote Foundations</span><span class="tl-tag">Module 2: Tools Mastery</span></div></div></div>
+            <div class="tl-item"><div class="tl-dot"><i class="fa-solid fa-2"></i></div><div class="tl-card"><div class="tl-week"><i class="fa-regular fa-calendar"></i> Week 2 — Readiness & Pathways</div><h4>Get Globally Ready &amp; Choose Your Path</h4><p style="font-size:0.84rem;">Global work standards, cross-cultural communication, career divergence, and income systems.</p><div class="tl-tags"><span class="tl-tag">Module 3: Global Readiness</span><span class="tl-tag orange">Module 4: Career Pathways ★</span><span class="tl-tag">Module 5: Income Systems</span></div></div></div>
+            <div class="tl-item"><div class="tl-dot"><i class="fa-solid fa-3"></i></div><div class="tl-card"><div class="tl-week"><i class="fa-regular fa-calendar"></i> Week 3 — Power Skills</div><h4>Unlock Your Professional Edge</h4><p style="font-size:0.84rem;">Productivity mastery, AI tools, and personal brand building that sets you apart globally.</p><div class="tl-tags"><span class="tl-tag">Module 6: Productivity</span><span class="tl-tag orange">Module 7: AI <i class="fa-solid fa-fire"></i></span><span class="tl-tag">Module 8: Personal Brand</span></div></div></div>
+            <div class="tl-item"><div class="tl-dot orange"><i class="fa-solid fa-4"></i></div><div class="tl-card" style="border-color:var(--orange);"><div class="tl-week"><i class="fa-solid fa-trophy" style="color:var(--orange);"></i> Week 4 — Launch</div><h4>Acquire, Launch &amp; Graduate</h4><p style="font-size:0.84rem;">Job/client acquisition, Capstone Project, and Demo Day — present to mentors and partners.</p><div class="tl-tags"><span class="tl-tag">Module 9: Acquisition</span><span class="tl-tag orange"><i class="fa-solid fa-trophy"></i> Capstone + Demo Day</span></div></div></div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="info-card">
+            <h3><i class="fa-regular fa-calendar"></i> Weekly Schedule</h3>
+            <div style="overflow-x:auto;margin-top:0.875rem;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.84rem;">
+                <thead><tr style="border-bottom:2px solid var(--border);"><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Syne',sans-serif;">Day</th><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Syne',sans-serif;">Activity</th></tr></thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Monday</td><td style="padding:0.55rem 0.75rem;">Live Session + Async work</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--section-alt);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Tuesday</td><td style="padding:0.55rem 0.75rem;">Live Session + Peer Check-in</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Wednesday</td><td style="padding:0.55rem 0.75rem;">Live + Mentor Office Hours (4–5 PM EAT)</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--section-alt);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Thursday</td><td style="padding:0.55rem 0.75rem;">Live Session + Async work</td></tr>
+                  <tr><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--orange);">Friday</td><td style="padding:0.55rem 0.75rem;">Live + Peer Check-in + Guest Speaker</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3><i class="fa-solid fa-people-group"></i> Accountability Groups</h3>
+            <p style="font-size:0.88rem;margin-bottom:0.875rem;">Each cohort is divided into intimate accountability groups designed for real support and real results.</p>
+            <div class="schedule-grid">
+              <div class="sched-item"><span><i class="fa-solid fa-users"></i> Group Size</span><strong>8–12 participants</strong></div>
+              <div class="sched-item"><span><i class="fa-regular fa-calendar-check"></i> Check-ins</span><strong>Tue + Fri sessions</strong></div>
+              <div class="sched-item"><span><i class="fa-brands fa-slack"></i> Channels</span><strong>Dedicated Slack group</strong></div>
+              <div class="sched-item"><span><i class="fa-regular fa-calendar"></i> 1-on-1</span><strong>Book via Calendly</strong></div>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools You'll Use</h3>
+            <div class="tool-chips" style="margin-top:0.875rem;">
+              <span class="tool-chip"><i class="fa-brands fa-slack"></i> Slack</span>
+              <span class="tool-chip"><i class="fa-solid fa-video"></i> Zoom</span>
+              <span class="tool-chip"><i class="fa-brands fa-google"></i> Google Workspace</span>
+              <span class="tool-chip"><i class="fa-solid fa-note-sticky"></i> Notion</span>
+              <span class="tool-chip"><i class="fa-solid fa-robot"></i> ChatGPT</span>
+              <span class="tool-chip"><i class="fa-solid fa-robot"></i> Claude AI</span>
+              <span class="tool-chip"><i class="fa-solid fa-robot"></i> Gemini</span>
+              <span class="tool-chip"><i class="fa-solid fa-list-check"></i> Trello</span>
+              <span class="tool-chip"><i class="fa-solid fa-list-check"></i> Asana</span>
+              <span class="tool-chip"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+              <span class="tool-chip"><i class="fa-solid fa-money-bill-transfer"></i> Wise</span>
+              <span class="tool-chip"><i class="fa-solid fa-credit-card"></i> Payoneer</span>
+              <span class="tool-chip"><i class="fa-solid fa-money-bill-wave"></i> Flutterwave</span>
+              <span class="tool-chip"><i class="fa-regular fa-calendar"></i> Calendly</span>
+              <span class="tool-chip"><i class="fa-solid fa-film"></i> Loom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner"><div class="container">
+    <h2>4 Weeks That Will Change Your Career Trajectory.</h2>
+    <p>Join the June 2025 cohort — applications are open now.</p>
+    <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
+  </div></div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: ENROL
+══════════════════════════════════════════════ -->
+<div id="page-enrol" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>Apply &amp; Enrol</h1>
+    <p>Complete your application and secure your spot in the ARWMP June 2025 cohort.</p>
+  </div>
+  <div class="section">
+    <div class="container">
+
+      <!-- Success -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Application &amp; Payment Confirmed!</h2>
+        <p id="successMsg">Your spot in the June 2025 cohort is confirmed. Check your email for next steps and your cohort welcome pack.</p>
+        <p style="color:var(--teal);font-weight:600;"><i class="fa-regular fa-calendar"></i> Program Dates: June 7 – July 3, 2025</p>
+        <button class="btn btn-teal" style="margin-top:1.5rem;" onclick="resetEnrol()"><i class="fa-solid fa-rotate-left"></i> Return to Application</button>
+      </div>
+
+      <!-- Form + Payment -->
+      <div class="enrol-grid" id="enrolMain">
+        <!-- Application Form -->
+        <div>
+          <div class="form-card">
+            <h3><i class="fa-solid fa-file-pen" style="color:var(--teal);margin-right:0.4rem;"></i> Your Application</h3>
+            <p>All fields marked <span class="req">*</span> are required. Your information is handled securely.</p>
+            <div class="alert alert-error" id="formErr"><i class="fa-solid fa-triangle-exclamation"></i> Please fill in all required fields and confirm your commitment before proceeding.</div>
+            <div class="divider"></div>
+            <div class="form-grid">
+              <div class="fg"><label><i class="fa-solid fa-user"></i> Full Name <span class="req">*</span></label><input type="text" id="f_name" placeholder="Your full name"/></div>
+              <div class="fg"><label><i class="fa-regular fa-envelope"></i> Email Address <span class="req">*</span></label><input type="email" id="f_email" placeholder="your@email.com"/></div>
+              <div class="fg"><label><i class="fa-solid fa-globe-africa"></i> Country <span class="req">*</span></label>
+                <select id="f_country"><option value="">— Select your country —</option><option>Algeria</option><option>Angola</option><option>Benin</option><option>Botswana</option><option>Burkina Faso</option><option>Burundi</option><option>Cabo Verde</option><option>Cameroon</option><option>Central African Republic</option><option>Chad</option><option>Comoros</option><option>Congo (Brazzaville)</option><option>Congo (Kinshasa)</option><option>Djibouti</option><option>Egypt</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Eswatini</option><option>Ethiopia</option><option>Gabon</option><option>Gambia</option><option>Ghana</option><option>Guinea</option><option>Guinea-Bissau</option><option>Ivory Coast</option><option>Kenya</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Madagascar</option><option>Malawi</option><option>Mali</option><option>Mauritania</option><option>Mauritius</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Niger</option><option>Nigeria</option><option>Rwanda</option><option>São Tomé and Príncipe</option><option>Senegal</option><option>Seychelles</option><option>Sierra Leone</option><option>Somalia</option><option>South Africa</option><option>South Sudan</option><option>Sudan</option><option>Tanzania</option><option>Togo</option><option>Tunisia</option><option>Uganda</option><option>Zambia</option><option>Zimbabwe</option></select>
+              </div>
+              <div class="fg"><label><i class="fa-brands fa-whatsapp"></i> Phone / WhatsApp <span class="req">*</span></label><input type="tel" id="f_phone" placeholder="+234 800 000 0000"/></div>
+              <div class="fg"><label><i class="fa-solid fa-road"></i> Career Track <span class="req">*</span></label><select id="f_track"><option value="">— Select your track —</option><option>Track A — Remote Employment</option><option>Track B — Freelancing</option><option>Track C — Remote Entrepreneurship</option></select></div>
+              <div class="fg"><label><i class="fa-solid fa-id-badge"></i> Profession / Job Title <span class="req">*</span></label><input type="text" id="f_profession" placeholder="e.g. Marketing Manager"/></div>
+              <div class="fg"><label><i class="fa-solid fa-clock-rotate-left"></i> Years of Experience <span class="req">*</span></label><select id="f_experience"><option value="">— Select —</option><option>0–1 years</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div>
+              <div class="fg"><label><i class="fa-solid fa-magnifying-glass"></i> How did you hear about us?</label><select id="f_source"><option value="">— Select —</option><option>Social Media</option><option>Referral</option><option>Google</option><option>Other</option></select></div>
+              <div class="fg full"><label><i class="fa-solid fa-pen-nib"></i> Why do you want to join ARWMP? <span class="req">*</span></label><textarea id="f_motivation" placeholder="Tell us about your goals and what you hope to achieve... (max 300 words)" maxlength="2200" oninput="wc(this)"></textarea><div class="word-ct" id="wcDisplay"><i class="fa-regular fa-file-lines"></i> 0 / 300 words</div></div>
+              <div class="fg full"><div class="check-row"><input type="checkbox" id="f_commit"/><label for="f_commit"><i class="fa-solid fa-handshake"></i> I commit to completing the full 4-week program (June 7 – July 3, 2025) and understand the program fee of <strong>$1,100 USD</strong> is non-refundable once my spot is confirmed. <span class="req">*</span></label></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Sidebar -->
+        <div class="pay-sidebar">
+          <div class="pay-card">
+            <div class="price-hero">
+              <span><i class="fa-solid fa-tag"></i> Program Investment</span>
+              <strong>$1,100</strong>
+              <small>USD · One-time · Certificate included</small>
+            </div>
+            <div class="prog-summary">
+              <h4><i class="fa-solid fa-circle-info"></i> Program Summary</h4>
+              <div class="prog-row"><span><i class="fa-solid fa-graduation-cap" style="color:var(--teal);width:16px;"></i> Program</span><strong>ARWMP by 54Links</strong></div>
+              <div class="prog-row"><span><i class="fa-regular fa-calendar" style="color:var(--teal);width:16px;"></i> Dates</span><strong>Jun 7 – Jul 3, 2025</strong></div>
+              <div class="prog-row"><span><i class="fa-solid fa-layer-group" style="color:var(--teal);width:16px;"></i> Modules</span><strong>9 Modules + Capstone</strong></div>
+              <div class="prog-row"><span><i class="fa-solid fa-video" style="color:var(--teal);width:16px;"></i> Format</span><strong>Fully Virtual</strong></div>
+              <div class="prog-row"><span><i class="fa-solid fa-certificate" style="color:var(--teal);width:16px;"></i> Certificate</span><strong>Included <i class="fa-solid fa-check" style="color:#16a34a;"></i></strong></div>
+            </div>
+
+            <div class="pay-methods-label"><i class="fa-solid fa-credit-card"></i> Choose Payment Method</div>
+
+            <!-- Flutterwave -->
+            <button class="pay-btn pay-btn-flw" onclick="doFlutterwave()">
+              <i class="fa-solid fa-money-bill-wave"></i> Pay with Flutterwave
+            </button>
+
+            <div class="pay-divider">or</div>
+
+            <!-- PayPal -->
+            <button class="pay-btn pay-btn-paypal" onclick="doPayPal()">
+              <i class="fa-brands fa-paypal"></i> Pay with PayPal
+            </button>
+
+            <div class="pay-divider">or</div>
+
+            <!-- Email -->
+            <button class="pay-btn pay-btn-email" onclick="doEmail()">
+              <i class="fa-solid fa-envelope"></i> Request Payment via Email
+            </button>
+
+            <div class="method-chips">
+              <span class="method-chip"><i class="fa-brands fa-cc-visa"></i> Visa</span>
+              <span class="method-chip"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+              <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> M-Pesa</span>
+              <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> MTN MoMo</span>
+              <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> Airtel Money</span>
+              <span class="method-chip"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
+              <span class="method-chip"><i class="fa-solid fa-hashtag"></i> USSD</span>
+              <span class="method-chip"><i class="fa-brands fa-paypal"></i> PayPal</span>
+            </div>
+
+            <div class="secure-note">
+              <i class="fa-solid fa-lock"></i> Payments secured by Flutterwave &amp; PayPal
+            </div>
+          </div>
+
+          <div class="email-support">
+            <h4><i class="fa-solid fa-headset"></i> Need Help? Contact Us</h4>
+            <p>For payment assistance or program enquiries:</p>
+            <a href="mailto:54Linksremoteworkmastery@gmail.com"><i class="fa-solid fa-envelope"></i> 54Linksremoteworkmastery@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026
+     54Links. All rights reserved.</p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: FAQ
+══════════════════════════════════════════════ -->
+<div id="page-faq" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know before joining ARWMP.</p>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="faq-wrap">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-circle-question" style="color:var(--teal);margin-right:0.5rem;"></i>What is the African Remote Work Mastery Program?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">ARWMP is a 4-week, fully virtual intensive program designed and delivered by 54Links to equip African professionals with the skills, tools, and strategies to thrive in the global remote work economy. It covers remote mindset, AI tools, job hunting, freelancing, and entrepreneurship.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-users" style="color:var(--teal);margin-right:0.5rem;"></i>Who is this program designed for?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">ARWMP is designed for early-career to mid-level African professionals across all 54 AU member states. Whether you're looking for remote employment, want to build a freelance business, or launch a remote-first venture, there is a track tailored for you.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-road" style="color:var(--teal);margin-right:0.5rem;"></i>What are the three career tracks?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Track A (Remote Employment) is for professionals seeking global remote jobs. Track B (Freelancing) is for those building a freelance business on Upwork, Fiverr, etc. Track C (Remote Entrepreneurship) is for those launching a remote-first African business. All tracks share Modules 1–3 and 5–9; only Module 4 diverges.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-video" style="color:var(--teal);margin-right:0.5rem;"></i>How is the program delivered?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">The program is 60% live via Zoom and 40% asynchronous via Google Classroom. Live sessions run Monday to Friday. Async tasks are completed in the afternoons. Mentor office hours are every Wednesday 4–5 PM EAT. Guest speakers appear every Friday.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-regular fa-clock" style="color:var(--teal);margin-right:0.5rem;"></i>What time zone are the live sessions in?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Live sessions are scheduled in East Africa Time (EAT). Please confirm your local time zone equivalent before enrolling to ensure compatibility with your schedule.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-tag" style="color:var(--teal);margin-right:0.5rem;"></i>How much does the program cost?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">The program fee is $1,100 USD — a one-time investment that includes all 9 modules, the Capstone Project, Demo Day participation, and your ARWMP Certificate of Completion issued by 54Links.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-credit-card" style="color:var(--teal);margin-right:0.5rem;"></i>What payment methods are accepted?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">We accept payments via Flutterwave (supporting Visa/Mastercard, M-Pesa, MTN Mobile Money, Airtel Money, Orange Money, Bank Transfer, USSD and more) and PayPal. You can also email 54Linksremoteworkmastery@gmail.com for alternative payment arrangements.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-certificate" style="color:var(--teal);margin-right:0.5rem;"></i>Will I receive a certificate?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Yes. Upon successful completion of the full 4-week program — including the Capstone Project and Demo Day — you will receive an official ARWMP Certificate of Completion issued by 54Links.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-envelope-open-text" style="color:var(--teal);margin-right:0.5rem;"></i>What happens after I pay and enrol?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">After payment is confirmed, you'll receive a welcome email with your cohort details, Slack workspace invitation, Google Classroom access, and your programme schedule. The program begins June 7, 2025.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-screwdriver-wrench" style="color:var(--teal);margin-right:0.5rem;"></i>What tools will I need?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">You'll need a laptop or computer with a reliable internet connection, Zoom, a Google account, and Slack. All other tools (Notion, Trello, ChatGPT, Claude, Loom, etc.) are introduced during the program curriculum.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-people-group" style="color:var(--teal);margin-right:0.5rem;"></i>What is the accountability group?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Every participant is placed in an accountability group of 8–12 peers with a dedicated Slack channel, Tuesday and Friday peer check-in sessions, and mutual support throughout the 4 weeks.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-rotate-left" style="color:var(--teal);margin-right:0.5rem;"></i>Is there a refund policy?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">The program fee is non-refundable once your spot is confirmed. Please review the program details carefully before enrolling. For any concerns, contact 54Linksremoteworkmastery@gmail.com.</div></div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <p style="margin-bottom:1.25rem;"><i class="fa-regular fa-comments" style="color:var(--teal);"></i> Still have questions? We're here to help.</p>
+        <a href="mailto:54Linksremoteworkmastery@gmail.com" class="btn btn-teal"><i class="fa-solid fa-envelope"></i> Email 54Linksremoteworkmastery@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════════════ -->
+<div id="page-contact" class="page page-top">
+  <div class="page-hero-banner">
+    <h1>Contact Us</h1>
+    <p>Have a question? Our team is ready to help.</p>
+  </div>
+  <div class="section">
+    <div class="container contact-2col">
+      <div>
+        <div class="section-eyebrow"><i class="fa-solid fa-headset"></i> Get In Touch</div>
+        <h2 class="section-heading">We're Here to Help</h2>
+        <p style="margin-bottom:2rem;">Whether you have questions about the curriculum, payment options, or want to learn more about 54Links and ARWMP — reach out.</p>
+        <div class="contact-method"><div class="cmethod-icon"><i class="fa-solid fa-envelope"></i></div><div><span class="cmethod-label">ARWMP Enquiries</span><a href="mailto:54Linksremoteworkmastery@gmail.com" class="cmethod-val">54Linksremoteworkmastery@gmail.com</a></div></div>
+        <div class="contact-method"><div class="cmethod-icon"><i class="fa-solid fa-globe"></i></div><div><span class="cmethod-label">Website</span><a href="https://www.54links.com" target="_blank" class="cmethod-val">www.54links.com</a></div></div>
+        <div class="contact-method"><div class="cmethod-icon orange"><i class="fa-regular fa-calendar"></i></div><div><span class="cmethod-label">Program Dates</span><span class="cmethod-val">June 7 – July 3, 2025 · Fully Virtual</span></div></div>
+        <div class="contact-method"><div class="cmethod-icon orange"><i class="fa-solid fa-globe-africa"></i></div><div><span class="cmethod-label">Geographic Scope</span><span class="cmethod-val">All 54 African Union member states</span></div></div>
+        <div style="margin-top:0.5rem;">
+          <p style="font-size:0.82rem;font-weight:600;color:var(--heading);margin-bottom:0.75rem;"><i class="fa-solid fa-share-nodes" style="color:var(--teal);"></i> Follow 54Links</p>
+          <div class="social-row">
+            <a class="social-link-btn" href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-link-btn" href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="social-link-btn" href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social-link-btn" href="mailto:54Linksremoteworkmastery@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-card">
+          <h3><i class="fa-solid fa-paper-plane" style="color:var(--teal);margin-right:0.4rem;"></i> Send a Message</h3>
+          <p>Fill out the form and we'll respond via email. Or email us directly at <a href="mailto:54Linksremoteworkmastery@gmail.com">54Linksremoteworkmastery@gmail.com</a></p>
+          <div class="divider"></div>
+          <div class="alert alert-success" id="contactOk"><i class="fa-solid fa-circle-check"></i> Message sent! We'll get back to you shortly.</div>
+          <div class="form-grid">
+            <div class="fg"><label><i class="fa-solid fa-user"></i> Full Name <span class="req">*</span></label><input type="text" id="c_name" placeholder="Your name"/></div>
+            <div class="fg"><label><i class="fa-regular fa-envelope"></i> Email <span class="req">*</span></label><input type="email" id="c_email" placeholder="your@email.com"/></div>
+            <div class="fg full"><label><i class="fa-solid fa-tag"></i> Subject</label><input type="text" id="c_subject" placeholder="e.g. Enquiry about Track B"/></div>
+            <div class="fg full"><label><i class="fa-solid fa-comment"></i> Message <span class="req">*</span></label><textarea id="c_message" placeholder="How can we help you?" style="min-height:130px;"></textarea></div>
+          </div>
+          <button class="btn btn-teal btn-full" style="margin-top:1.25rem;" onclick="sendContact()"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved. | <a href="https://www.54links.com" target="_blank">www.54links.com</a></p></div></footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════ -->
+<script>
+/* ── Navigation ── */
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + id);
+  if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+  closeMobile();
+  // Trigger reveal animations for new page
+  setTimeout(triggerReveal, 100);
+}
+
+/* ── Mobile Menu ── */
+let menuOpen = false;
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  document.getElementById('mobileNav').classList.toggle('open', menuOpen);
+  document.getElementById('hamIcon').className = menuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+function closeMobile() {
+  menuOpen = false;
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamIcon').className = 'fa-solid fa-bars';
+}
+
+/* ── Theme ── */
+function toggleTheme() {
+  const html = document.documentElement;
+  const dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  document.getElementById('themeIcon').className = dark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+  localStorage.setItem('arwmpTheme', dark ? 'light' : 'dark');
+}
+(function() {
+  const t = localStorage.getItem('arwmpTheme') || 'light';
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('themeIcon').className = t === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+})();
+
+/* ── FAQ ── */
+function toggleFaq(btn) { btn.parentElement.classList.toggle('open'); }
+
+/* ── Word Count ── */
+function wc(el) {
+  const words = el.value.trim() === '' ? 0 : el.value.trim().split(/\s+/).length;
+  document.getElementById('wcDisplay').innerHTML = '<i class="fa-regular fa-file-lines"></i> ' + words + ' / 300 words';
+  el.style.borderColor = words > 300 ? 'var(--error)' : '';
+}
+
+/* ── Form Validation ── */
+function validateForm() {
+  const ids = ['f_name','f_email','f_country','f_phone','f_track','f_profession','f_experience','f_motivation'];
+  let ok = true;
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || !el.value.trim()) { if(el) el.style.borderColor = 'var(--error)'; ok = false; }
+    else el.style.borderColor = '';
+  });
+  if (!document.getElementById('f_commit').checked) ok = false;
+  const err = document.getElementById('formErr');
+  if (!ok) { err.classList.add('show'); err.scrollIntoView({behavior:'smooth',block:'center'}); }
+  else err.classList.remove('show');
+  return ok;
+}
+function getAppData() {
+  return {
+    name:       document.getElementById('f_name').value,
+    email:      document.getElementById('f_email').value,
+    country:    document.getElementById('f_country').value,
+    phone:      document.getElementById('f_phone').value,
+    track:      document.getElementById('f_track').value,
+    profession: document.getElementById('f_profession').value,
+    experience: document.getElementById('f_experience').value,
+    motivation: document.getElementById('f_motivation').value,
+  };
+}
+
+/* ── Flutterwave ──
+   DEVELOPER NOTE:
+   1. Add to <head>: <script src="https://checkout.flutterwave.com/v3.js"><\/script>
+   2. Replace 'YOUR_FLW_PUBLIC_KEY' with your actual Flutterwave public key
+   3. Your SECRET key must ONLY live on your backend server in .env — NEVER in frontend code
+   4. Set up a webhook at /api/verify-flutterwave to verify on the server using secret key
+*/
+function doFlutterwave() {
+  if (!validateForm()) return;
+  const d = getAppData();
+  if (typeof FlutterwaveCheckout === 'undefined') {
+    alert('Flutterwave not loaded.\n\nTo activate:\n1. Add <script src="https://checkout.flutterwave.com/v3.js"></scr' + 'ipt> in <head>\n2. Replace YOUR_FLW_PUBLIC_KEY with your actual public key.\n\nFor now, use the email option below.');
+    return;
+  }
+  FlutterwaveCheckout({
+    public_key:   'YOUR_FLW_PUBLIC_KEY',  // 🔑 Replace this
+    tx_ref:       'ARWMP-' + Date.now() + '-' + Math.random().toString(36).substr(2,8),
+    amount:       1100,
+    currency:     'USD',
+    payment_options: 'card,mobilemoney,ussd,banktransfer',
+    customer:     { email: d.email, phone_number: d.phone, name: d.name },
+    customizations: {
+      title:       'ARWMP — 54Links',
+      description: 'African Remote Work Mastery Program · ' + d.track,
+      logo:        'https://www.54links.com/logo.png',
+    },
+    callback: function(r) {
+      if (r.status === 'successful') {
+        // TODO: POST r.transaction_id to your backend to verify before granting access
+        showSuccess(d);
+      }
+    },
+    onclose: function() { console.log('Flutterwave modal closed'); }
+  });
+}
+
+/* ── PayPal ──
+   DEVELOPER NOTE:
+   1. Add to <head>: <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"><\/script>
+   2. Replace button below with paypal.Buttons({...}).render('#paypalContainer')
+   3. Capture & verify orders on your backend — NEVER expose client secret in frontend
+*/
+function doPayPal() {
+  if (!validateForm()) return;
+  alert('PayPal integration ready.\n\nTo activate:\n1. Add PayPal SDK script with your client-id to <head>\n2. Replace this function with paypal.Buttons().render()\n3. Capture the order on your backend server\n\nFor now, use "Request Payment via Email" below or contact:\n54Linksremoteworkmastery@gmail.com');
+}
+
+/* ── Email Payment ── */
+function doEmail() {
+  if (!validateForm()) return;
+  const d = getAppData();
+  const sub = encodeURIComponent('ARWMP Enrolment — ' + d.name + ' — ' + d.track);
+  const body = encodeURIComponent(
+    'Hello 54Links ARWMP Team,\n\nI would like to enrol in ARWMP and request payment instructions.\n\n' +
+    '--- APPLICANT DETAILS ---\n' +
+    'Full Name: '        + d.name       + '\n' +
+    'Email: '           + d.email      + '\n' +
+    'Country: '         + d.country    + '\n' +
+    'Phone/WhatsApp: '  + d.phone      + '\n' +
+    'Career Track: '    + d.track      + '\n' +
+    'Profession: '      + d.profession + '\n' +
+    'Experience: '      + d.experience + '\n\n' +
+    'Why I want to join:\n' + d.motivation + '\n\n' +
+    'Program: ARWMP — June 7–July 3, 2025\n' +
+    'Fee: $1,100 USD\n\n' +
+    'Please send payment instructions at your earliest convenience.\n\nThank you,\n' + d.name
+  );
+  window.location.href = 'mailto:54Linksremoteworkmastery@gmail.com?subject=' + sub + '&body=' + body;
+}
+
+/* ── Show Success ── */
+function showSuccess(d) {
+  document.getElementById('enrolMain').style.display = 'none';
+  const s = document.getElementById('successScreen');
+  document.getElementById('successMsg').textContent =
+    'Welcome, ' + d.name + '! Your spot for ' + d.track + ' is confirmed. Check ' + d.email + ' for your welcome pack.';
+  s.classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function resetEnrol() {
+  document.getElementById('enrolMain').style.display = '';
+  document.getElementById('successScreen').classList.remove('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── Contact Form ── */
+function sendContact() {
+  const name = document.getElementById('c_name').value;
+  const email = document.getElementById('c_email').value;
+  const msg = document.getElementById('c_message').value;
+  if (!name || !email || !msg) { alert('Please fill in your name, email, and message.'); return; }
+  const sub  = encodeURIComponent(document.getElementById('c_subject').value || 'ARWMP Enquiry from ' + name);
+  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+  window.location.href = 'mailto:54Linksremoteworkmastery@gmail.com?subject=' + sub + '&body=' + body;
+  document.getElementById('contactOk').classList.add('show');
+}
+
+/* ── Scroll Reveal ── */
+function triggerReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => observer.observe(el));
+}
+document.addEventListener('DOMContentLoaded', triggerReveal);
+
+/* ── Favicon — canvas-generated PNG of the 54Links logo mark ── */
+(function buildFavicon() {
+  const sizes = [16, 32, 64, 180];
+  function drawIcon(size) {
+    const c = document.createElement('canvas');
+    c.width = c.height = size;
+    const ctx = c.getContext('2d');
+    const s = size / 100;
+
+    // Background circle — teal
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+    ctx.fillStyle = '#03647C';
+    ctx.fill();
+
+    // Helper: rounded rectangle
+    function rr(x, y, w, h, r) {
+      const rx = x*s, ry = y*s, rw = w*s, rh = h*s, rr = r*s;
+      ctx.beginPath();
+      ctx.moveTo(rx + rr, ry);
+      ctx.lineTo(rx + rw - rr, ry);
+      ctx.quadraticCurveTo(rx + rw, ry, rx + rw, ry + rr);
+      ctx.lineTo(rx + rw, ry + rh - rr);
+      ctx.quadraticCurveTo(rx + rw, ry + rh, rx + rw - rr, ry + rh);
+      ctx.lineTo(rx + rr, ry + rh);
+      ctx.quadraticCurveTo(rx, ry + rh, rx, ry + rh - rr);
+      ctx.lineTo(rx, ry + rr);
+      ctx.quadraticCurveTo(rx, ry, rx + rr, ry);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // 5 stacked bars — white, narrowing downward (54Links logo shape)
+    ctx.fillStyle = '#FFFFFF';
+    rr(18, 12, 64, 11, 5.5);  // bar 1 — widest
+    rr(13, 27, 74, 11, 5.5);  // bar 2
+    rr(15, 42, 70, 11, 5.5);  // bar 3
+    ctx.fillStyle = '#F36E24'; // orange accent bar
+    rr(22, 57, 40, 11, 5.5);  // bar 4 — orange, narrower
+    ctx.fillStyle = '#FFFFFF';
+    rr(19, 72, 32, 11, 5.5);  // bar 5 — narrowest
+
+    return c.toDataURL('image/png');
+  }
+
+  // Set 32×32 as browser favicon
+  const png32 = drawIcon(32);
+  const tag = document.getElementById('faviconTag');
+  if (tag) tag.href = png32;
+
+  // Set 180×180 as Apple touch icon
+  const png180 = drawIcon(180);
+  const apple = document.getElementById('appleTouchIcon');
+  if (apple) apple.href = png180;
+})();
+</script>
+</body>
+</html>
