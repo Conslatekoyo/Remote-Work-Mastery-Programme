@@ -7,7 +7,7 @@
 <meta name="description" content="Master Remote Work. Get Hired Globally. Build from Africa. A 4-week intensive program by 54Links for African professionals across all 54 AU member states."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 <link rel="icon" id="faviconTag" type="image/png" href=""/>
 <link rel="apple-touch-icon" id="appleTouchIcon" href=""/>
@@ -62,7 +62,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
   background: var(--light-bg);
   color: var(--body-text);
   line-height: 1.65;
@@ -74,7 +74,7 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: var(--teal); transition: color 0.2s; }
 a:hover { color: var(--orange); }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--heading);
   line-height: 1.15;
   font-weight: 700;
@@ -114,9 +114,20 @@ nav {
   display: flex; align-items: center; gap: 10px;
   cursor: pointer; flex-shrink: 0; text-decoration: none;
 }
-.nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
+.nav-logo svg { width: auto; height: 38px; flex-shrink: 0; }
+/* Embedded real logo image styles */
+.nav-logo-crop { display: flex; align-items: center; }
+.nav-logo-canvas { height: 34px; width: auto; display: block; border-radius: 3px; }
+.footer-logo-canvas { height: 34px; width: auto; display: block; }
+/* Logo bar colours switch with theme */
+.logo-bar        { fill: #03647C; transition: fill 0.3s; }
+.logo-bar-orange { fill: #F36E24; transition: fill 0.3s; }
+[data-theme="dark"] .logo-bar { fill: #FFFFFF; }
+/* Footer logo always white (dark bg) */
+.logo-bar-footer        { fill: #FFFFFF; }
+.logo-bar-footer-orange { fill: #F36E24; }
 .nav-logo-text {
-  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
   font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--teal);
 }
 .nav-links {
@@ -133,7 +144,7 @@ nav {
 .btn-nav-enrol {
   background: var(--orange); color: #fff;
   padding: 0.5rem 1.1rem; border-radius: 8px;
-  font-weight: 700; font-size: 0.82rem; font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 0.82rem; font-family: 'Plus Jakarta Sans', sans-serif;
   border: none; cursor: pointer; white-space: nowrap;
   transition: background 0.2s, transform 0.15s; line-height: 1;
 }
@@ -174,7 +185,7 @@ nav {
 .mobile-nav a:hover { background: var(--teal-light); color: var(--teal); }
 .mobile-nav .mobile-enrol {
   background: var(--orange); color: #fff; justify-content: center;
-  font-weight: 700; font-family: 'Syne', sans-serif;
+  font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif;
   margin-top: 1rem; font-size: 1rem;
 }
 .mobile-nav .mobile-enrol:hover { background: #d55e1a; }
@@ -254,7 +265,7 @@ nav {
   text-align: center;
 }
 .hero-price-chip span { color: rgba(255,255,255,0.78); font-size: 0.8rem; display: block; margin-bottom: 0.15rem; }
-.hero-price-chip strong { color: #fff; font-family: 'Syne', sans-serif; font-size: 1.85rem; font-weight: 800; display: block; }
+.hero-price-chip strong { color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.85rem; font-weight: 800; display: block; }
 .hero-price-chip small { color: rgba(255,255,255,0.65); font-size: 0.75rem; }
 
 /* ════════════════════════════════════════
@@ -271,7 +282,7 @@ nav {
 }
 .stat-item { text-align: center; padding: 0.5rem; }
 .stat-num {
-  font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 800; color: var(--orange); display: block; line-height: 1.1;
 }
 .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 500; display: block; margin-top: 0.2rem; }
@@ -308,7 +319,7 @@ nav {
 ════════════════════════════════════════ */
 .btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
   border: none; cursor: pointer; border-radius: 10px;
   transition: all 0.2s; text-align: center; justify-content: center;
   text-decoration: none; font-size: clamp(0.85rem, 2vw, 0.95rem);
@@ -371,7 +382,7 @@ nav {
 }
 .track-big-letter {
   position: absolute; right: 1rem; top: 0.5rem;
-  font-family: 'Syne', sans-serif; font-size: 3.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 3.5rem;
   font-weight: 800; color: rgba(255,255,255,0.13); line-height: 1;
 }
 .track-tag-chip {
@@ -415,7 +426,7 @@ nav {
 .step-num {
   width: 54px; height: 54px; border-radius: 50%;
   background: var(--teal); color: #fff;
-  font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 0.875rem;
 }
@@ -443,7 +454,7 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 0.6rem;
 }
-.mod-num { font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; }
+.mod-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; }
 .mod-num.orange { color: var(--orange); }
 .week-pill {
   font-size: 0.68rem; font-weight: 600; padding: 0.18rem 0.5rem;
@@ -518,7 +529,7 @@ nav {
 .t-author { display: flex; align-items: center; gap: 0.75rem; }
 .t-avatar {
   width: 42px; height: 42px; border-radius: 50%;
-  background: var(--teal); color: #fff; font-family: 'Syne', sans-serif;
+  background: var(--teal); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700; font-size: 0.95rem;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
@@ -683,7 +694,7 @@ nav {
 .pay-card { background: var(--card-bg); border-radius: 20px; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
 .price-hero { background: var(--teal); border-radius: 14px; padding: clamp(1.1rem, 3vw, 1.5rem); text-align: center; margin-bottom: 1.5rem; }
 .price-hero span  { color: rgba(255,255,255,0.78); font-size: 0.8rem; display: block; margin-bottom: 0.15rem; }
-.price-hero strong { color: #fff; font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 800; display: block; }
+.price-hero strong { color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 800; display: block; }
 .price-hero small  { color: rgba(255,255,255,0.65); font-size: 0.76rem; }
 .prog-summary { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .prog-summary h4 { font-size: 0.82rem; color: var(--body-text); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -695,7 +706,7 @@ nav {
 .pay-btn {
   width: 100%; padding: clamp(0.8rem, 2vw, 0.95rem);
   border-radius: 10px; border: none; cursor: pointer;
-  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
   font-size: clamp(0.88rem, 2vw, 1rem);
   display: flex; align-items: center; justify-content: center; gap: 0.6rem;
   margin-bottom: 0.75rem; transition: all 0.2s;
@@ -733,7 +744,7 @@ input, select, textarea {
   background: var(--input-bg); border: 1.5px solid var(--input-border);
   border-radius: 8px; padding: clamp(0.6rem, 2vw, 0.75rem) 0.875rem;
   font-size: clamp(0.83rem, 2vw, 0.9rem); color: var(--heading);
-  font-family: 'DM Sans', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+  font-family: 'Nunito Sans', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
   -webkit-appearance: none; appearance: none;
 }
 input:focus, select:focus, textarea:focus {
@@ -767,7 +778,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
 [data-theme="dark"] footer { background: #060e13; border-top: 1px solid var(--border); }
 .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: clamp(2rem, 5vw, 3rem); }
 .footer-brand-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 0.875rem; }
-.footer-brand-logo span { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; }
+.footer-brand-logo span { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; }
 .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.75; max-width: 260px; }
 .footer-col h5 { color: #fff; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
 .footer-col a { display: block; color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-bottom: 0.55rem; cursor: pointer; transition: color 0.2s; }
@@ -856,18 +867,14 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
 ══════════════════════════════════════════════ -->
 <nav id="mainNav">
   <div class="nav-logo" onclick="go('home')">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <rect x="15" y="8"  width="65" height="13" rx="6.5" fill="#03647C"/>
-      <rect x="8"  y="26" width="78" height="13" rx="6.5" fill="#03647C"/>
-      <rect x="10" y="44" width="72" height="13" rx="6.5" fill="#03647C"/>
-      <rect x="20" y="62" width="42" height="13" rx="6.5" fill="#F36E24"/>
-      <rect x="16" y="80" width="36" height="13" rx="6.5" fill="#03647C"/>
-    </svg>
-    <span class="nav-logo-text">54Links</span>
+    <div class="nav-logo-crop" id="navLogoWrap">
+      <!-- Real 54Links logo — cropped from actual brand image via JS canvas -->
+      <canvas id="navLogoCanvas" class="nav-logo-canvas"></canvas>
+    </div>
   </div>
 
   <nav class="nav-links">
-    <a onclick="go('home')"></i> Home</a>
+    <a onclick="go('home')"> Home</a>
     <a onclick="go('about')">About</a>
     <a onclick="go('curriculum')">Curriculum</a>
     <a onclick="go('tracks')">Career Tracks</a>
@@ -924,7 +931,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
           <i class="fa-solid fa-globe"></i>
           Pan-African · All 54 AU Member States
         </div>
-        <h1>Master Remote Work.<br/><span>Build from Africa.</span></h1>
+        <h1>Remote Work Mastery Programme.<br/><span>Master Remote Work.</span></h1>
         <p class="hero-lead">A 4-week intensive program for African professionals ready to compete and thrive in the global remote economy.</p>
         <div class="hero-meta">
           <div class="hero-meta-item"><i class="fa-regular fa-calendar"></i> June 7 – July 3, 2025</div>
@@ -1072,37 +1079,9 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       </div>
       <div class="steps-grid">
         <div class="step-card reveal"><div class="step-num">1</div><h4><i class="fa-solid fa-file-pen" style="color:var(--orange);margin-right:0.35rem;"></i>Apply</h4><p>Fill out your application and select your career track.</p></div>
-        <div class="step-card reveal"><div class="step-num">2</div><h4><i class="fa-solid fa-credit-card" style="color:var(--orange);margin-right:0.35rem;"></i>Enrol & Pay</h4><p>Secure your spot with a single $1,100 payment via Flutterwave or PayPal.</p></div>
+        <div class="step-card reveal"><div class="step-num">2</div><h4><i class="fa-solid fa-credit-card" style="color:var(--orange);margin-right:0.35rem;"></i>Enrol & Pay</h4><p>Secure your spot with a single $1,100 payment via Paystack or PayPal.</p></div>
         <div class="step-card reveal"><div class="step-num">3</div><h4><i class="fa-solid fa-chalkboard-user" style="color:var(--orange);margin-right:0.35rem;"></i>Learn & Build</h4><p>4 weeks of live sessions, async work, mentorship, and accountability.</p></div>
         <div class="step-card reveal"><div class="step-num">4</div><h4><i class="fa-solid fa-graduation-cap" style="color:var(--orange);margin-right:0.35rem;"></i>Graduate & Launch</h4><p>Demo Day, certificate, and your career fully activated.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Testimonials -->
-  <div class="section section-alt">
-    <div class="container">
-      <div class="centered">
-        <div class="section-eyebrow"><i class="fa-solid fa-comments"></i> Community Voice</div>
-        <h2 class="section-heading">What African Professionals Are Saying</h2>
-        <p class="section-lead">Real results from professionals across the continent.</p>
-      </div>
-      <div class="grid-3">
-        <div class="testimonial-card reveal">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"The program gave me the structure and confidence to finally land my first remote job — with a US-based company, earning in USD. This is life-changing."</p>
-          <div class="t-author"><div class="t-avatar">AO</div><div><span class="t-author-name">Amara Owusu</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track A · Accra, Ghana</span></div></div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Within 3 weeks of completing Track B, I had signed two international clients on Upwork. The proposals framework is pure gold. Worth every dollar."</p>
-          <div class="t-author"><div class="t-avatar">FK</div><div><span class="t-author-name">Fatima Kone</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track B · Nairobi, Kenya</span></div></div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"The AI module alone was worth the investment. I now use Claude and ChatGPT daily to 3× my productivity. The accountability group kept me going."</p>
-          <div class="t-author"><div class="t-avatar">TC</div><div><span class="t-author-name">Tendai Chuma</span><span class="t-author-sub"><i class="fa-solid fa-location-dot" style="color:var(--teal);font-size:0.7rem;"></i> Track C · Harare, Zimbabwe</span></div></div>
-        </div>
       </div>
     </div>
   </div>
@@ -1123,7 +1102,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-brand-logo">
-          <svg width="30" height="30" viewBox="0 0 100 100"><rect x="15" y="8" width="65" height="13" rx="6.5" fill="white"/><rect x="8" y="26" width="78" height="13" rx="6.5" fill="white"/><rect x="10" y="44" width="72" height="13" rx="6.5" fill="white"/><rect x="20" y="62" width="42" height="13" rx="6.5" fill="#F36E24"/><rect x="16" y="80" width="36" height="13" rx="6.5" fill="white"/></svg>
+          <canvas id="footerLogoCanvas" class="footer-logo-canvas"></canvas>
           <span>54Links</span>
         </div>
         <p>Powering Africa's Business Connections. Connecting professionals, founders, and teams across all 54 African nations.</p>
@@ -1155,7 +1134,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 54Links. All rights reserved. | African Remote Work Mastery Program</p>
+      <p>© 2025 54Links. All rights reserved. | African Remote Work Mastery Program</p>
       <a href="https://www.54links.com" target="_blank">www.54links.com</a>
     </div>
   </footer>
@@ -1234,7 +1213,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       <button class="btn btn-outline-white" onclick="go('curriculum')"><i class="fa-solid fa-book-open"></i> View Full Curriculum</button>
     </div>
   </div></div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved. | <a href="mailto:54Linksremoteworkmastery@gmail.com">54Linksremoteworkmastery@gmail.com</a></p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved. | <a href="mailto:54Linksremoteworkmastery@gmail.com">54Linksremoteworkmastery@gmail.com</a></p></div></footer>
 </div>
 
 
@@ -1244,7 +1223,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
 <div id="page-curriculum" class="page page-top">
   <div class="page-hero-banner">
     <h1>Curriculum</h1>
-    <p>9 modules + a Capstone Project — designed to take you from awareness to action in 4 weeks.</p>
+    <p>9 modules + a Capstone Project designed to take you from awareness to action in 4 weeks.</p>
   </div>
   <div class="section">
     <div class="container">
@@ -1294,7 +1273,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
     <p>Seats are limited. Secure your place in the June 2025 cohort.</p>
     <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
   </div></div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved.</p></div></footer>
 </div>
 
 
@@ -1336,8 +1315,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
     <p>All three paths lead to the same place — global impact from Africa.</p>
     <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
   </div></div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026
-     54Links. All rights reserved.</p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved.</p></div></footer>
 </div>
 
 
@@ -1367,7 +1345,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
             <h3><i class="fa-regular fa-calendar"></i> Weekly Schedule</h3>
             <div style="overflow-x:auto;margin-top:0.875rem;">
               <table style="width:100%;border-collapse:collapse;font-size:0.84rem;">
-                <thead><tr style="border-bottom:2px solid var(--border);"><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Syne',sans-serif;">Day</th><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Syne',sans-serif;">Activity</th></tr></thead>
+                <thead><tr style="border-bottom:2px solid var(--border);"><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Plus Jakarta Sans',sans-serif;">Day</th><th style="text-align:left;padding:0.5rem 0.75rem;color:var(--teal);font-size:0.76rem;font-family:'Plus Jakarta Sans',sans-serif;">Activity</th></tr></thead>
                 <tbody>
                   <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Monday</td><td style="padding:0.55rem 0.75rem;">Live Session + Async work</td></tr>
                   <tr style="border-bottom:1px solid var(--border);background:var(--section-alt);"><td style="padding:0.55rem 0.75rem;font-weight:600;color:var(--heading);">Tuesday</td><td style="padding:0.55rem 0.75rem;">Live Session + Peer Check-in</td></tr>
@@ -1417,7 +1395,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
     <p>Join the June 2025 cohort — applications are open now.</p>
     <div class="cta-actions"><button class="btn btn-orange" onclick="go('enrol')"><i class="fa-solid fa-arrow-right"></i> Enrol Now — $1,100</button></div>
   </div></div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved.</p></div></footer>
 </div>
 
 
@@ -1486,9 +1464,9 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
 
             <div class="pay-methods-label"><i class="fa-solid fa-credit-card"></i> Choose Payment Method</div>
 
-            <!-- Flutterwave -->
-            <button class="pay-btn pay-btn-flw" onclick="doFlutterwave()">
-              <i class="fa-solid fa-money-bill-wave"></i> Pay with Flutterwave
+            <!-- Paystack -->
+            <button class="pay-btn pay-btn-flw" onclick="doPaystack()">
+              <i class="fa-solid fa-shield-halved"></i> Pay with Paystack
             </button>
 
             <div class="pay-divider">or</div>
@@ -1510,14 +1488,13 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
               <span class="method-chip"><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
               <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> M-Pesa</span>
               <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> MTN MoMo</span>
-              <span class="method-chip"><i class="fa-solid fa-mobile-screen"></i> Airtel Money</span>
               <span class="method-chip"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
               <span class="method-chip"><i class="fa-solid fa-hashtag"></i> USSD</span>
               <span class="method-chip"><i class="fa-brands fa-paypal"></i> PayPal</span>
             </div>
 
             <div class="secure-note">
-              <i class="fa-solid fa-lock"></i> Payments secured by Flutterwave &amp; PayPal
+              <i class="fa-solid fa-lock"></i> Payments secured by Paystack &amp; PayPal
             </div>
           </div>
 
@@ -1530,8 +1507,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       </div>
     </div>
   </div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026
-     54Links. All rights reserved.</p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved.</p></div></footer>
 </div>
 
 
@@ -1552,7 +1528,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-video" style="color:var(--teal);margin-right:0.5rem;"></i>How is the program delivered?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">The program is 60% live via Zoom and 40% asynchronous via Google Classroom. Live sessions run Monday to Friday. Async tasks are completed in the afternoons. Mentor office hours are every Wednesday 4–5 PM EAT. Guest speakers appear every Friday.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-regular fa-clock" style="color:var(--teal);margin-right:0.5rem;"></i>What time zone are the live sessions in?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Live sessions are scheduled in East Africa Time (EAT). Please confirm your local time zone equivalent before enrolling to ensure compatibility with your schedule.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-tag" style="color:var(--teal);margin-right:0.5rem;"></i>How much does the program cost?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">The program fee is $1,100 USD — a one-time investment that includes all 9 modules, the Capstone Project, Demo Day participation, and your ARWMP Certificate of Completion issued by 54Links.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-credit-card" style="color:var(--teal);margin-right:0.5rem;"></i>What payment methods are accepted?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">We accept payments via Flutterwave (supporting Visa/Mastercard, M-Pesa, MTN Mobile Money, Airtel Money, Orange Money, Bank Transfer, USSD and more) and PayPal. You can also email 54Linksremoteworkmastery@gmail.com for alternative payment arrangements.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-credit-card" style="color:var(--teal);margin-right:0.5rem;"></i>What payment methods are accepted?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">We accept payments via Paystack (supporting Visa/Mastercard, M-Pesa, MTN Mobile Money, Bank Transfer, USSD and more) and PayPal. You can also email 54Linksremoteworkmastery@gmail.com for alternative payment arrangements.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-certificate" style="color:var(--teal);margin-right:0.5rem;"></i>Will I receive a certificate?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">Yes. Upon successful completion of the full 4-week program — including the Capstone Project and Demo Day — you will receive an official ARWMP Certificate of Completion issued by 54Links.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-envelope-open-text" style="color:var(--teal);margin-right:0.5rem;"></i>What happens after I pay and enrol?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">After payment is confirmed, you'll receive a welcome email with your cohort details, Slack workspace invitation, Google Classroom access, and your programme schedule. The program begins June 7, 2025.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><i class="fa-solid fa-screwdriver-wrench" style="color:var(--teal);margin-right:0.5rem;"></i>What tools will I need?</span><i class="fa-solid fa-plus faq-icon"></i></div><div class="faq-a">You'll need a laptop or computer with a reliable internet connection, Zoom, a Google account, and Slack. All other tools (Notion, Trello, ChatGPT, Claude, Loom, etc.) are introduced during the program curriculum.</div></div>
@@ -1565,7 +1541,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       </div>
     </div>
   </div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved.</p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved.</p></div></footer>
 </div>
 
 
@@ -1614,7 +1590,7 @@ footer { background: var(--dark); padding: clamp(3rem, 7vw, 4rem) clamp(1rem, 5v
       </div>
     </div>
   </div>
-  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2026 54Links. All rights reserved. | <a href="https://www.54links.com" target="_blank">www.54links.com</a></p></div></footer>
+  <footer><div class="footer-bottom" style="max-width:1200px;margin:1.5rem auto 0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;"><p>© 2025 54Links. All rights reserved. | <a href="https://www.54links.com" target="_blank">www.54links.com</a></p></div></footer>
 </div>
 
 
@@ -1652,6 +1628,7 @@ function toggleTheme() {
   html.setAttribute('data-theme', dark ? 'light' : 'dark');
   document.getElementById('themeIcon').className = dark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
   localStorage.setItem('arwmpTheme', dark ? 'light' : 'dark');
+  if (window._updateNavLogo) window._updateNavLogo();
 }
 (function() {
   const t = localStorage.getItem('arwmpTheme') || 'light';
@@ -1697,40 +1674,51 @@ function getAppData() {
   };
 }
 
-/* ── Flutterwave ──
-   DEVELOPER NOTE:
-   1. Add to <head>: <script src="https://checkout.flutterwave.com/v3.js"><\/script>
-   2. Replace 'YOUR_FLW_PUBLIC_KEY' with your actual Flutterwave public key
-   3. Your SECRET key must ONLY live on your backend server in .env — NEVER in frontend code
-   4. Set up a webhook at /api/verify-flutterwave to verify on the server using secret key
+/* ── Paystack Payment ──
+   DEVELOPER NOTES:
+   1. Add to <head>: <script src="https://js.paystack.co/v1/inline.js"><\/script>
+   2. Replace 'YOUR_PAYSTACK_PUBLIC_KEY' with your actual Paystack public key
+      (starts with pk_live_ for production or pk_test_ for testing)
+   3. Your SECRET key must ONLY live on your backend server in .env — NEVER in frontend
+   4. Set up a webhook endpoint at /api/verify-paystack to verify transactions server-side
+      using your secret key before granting course access
+   5. Paystack supports: NGN, GHS, ZAR, KES, USD, GBP, EUR and more
 */
-function doFlutterwave() {
+function doPaystack() {
   if (!validateForm()) return;
   const d = getAppData();
-  if (typeof FlutterwaveCheckout === 'undefined') {
-    alert('Flutterwave not loaded.\n\nTo activate:\n1. Add <script src="https://checkout.flutterwave.com/v3.js"></scr' + 'ipt> in <head>\n2. Replace YOUR_FLW_PUBLIC_KEY with your actual public key.\n\nFor now, use the email option below.');
+
+  if (typeof PaystackPop === 'undefined') {
+    alert('Paystack not loaded.\n\nTo activate:\n1. Add this to <head>:\n   <script src="https://js.paystack.co/v1/inline.js"><\/scr' + 'ipt>\n2. Replace YOUR_PAYSTACK_PUBLIC_KEY with your actual public key.\n\nFor now, use "Request Payment via Email" below or contact:\n54Linksremoteworkmastery@gmail.com');
     return;
   }
-  FlutterwaveCheckout({
-    public_key:   'YOUR_FLW_PUBLIC_KEY',  // 🔑 Replace this
-    tx_ref:       'ARWMP-' + Date.now() + '-' + Math.random().toString(36).substr(2,8),
-    amount:       1100,
-    currency:     'USD',
-    payment_options: 'card,mobilemoney,ussd,banktransfer',
-    customer:     { email: d.email, phone_number: d.phone, name: d.name },
-    customizations: {
-      title:       'ARWMP — 54Links',
-      description: 'African Remote Work Mastery Program · ' + d.track,
-      logo:        'https://www.54links.com/logo.png',
+
+  var handler = PaystackPop.setup({
+    key:      'YOUR_PAYSTACK_PUBLIC_KEY',  // 🔑 Replace with your actual public key
+    email:    d.email,
+    amount:   110000,  // Amount in smallest currency unit (cents): $1100.00 USD = 110000 cents
+    currency: 'USD',
+    ref:      'ARWMP-' + Date.now() + '-' + Math.random().toString(36).substr(2, 8),
+    metadata: {
+      custom_fields: [
+        { display_name: 'Applicant Name',  variable_name: 'name',       value: d.name       },
+        { display_name: 'Country',         variable_name: 'country',    value: d.country    },
+        { display_name: 'Career Track',    variable_name: 'track',      value: d.track      },
+        { display_name: 'WhatsApp',        variable_name: 'phone',      value: d.phone      },
+        { display_name: 'Profession',      variable_name: 'profession', value: d.profession },
+      ]
     },
-    callback: function(r) {
-      if (r.status === 'successful') {
-        // TODO: POST r.transaction_id to your backend to verify before granting access
-        showSuccess(d);
-      }
+    callback: function(response) {
+      /* IMPORTANT: Always verify on your backend before granting access.
+         POST { reference: response.reference } to /api/verify-paystack
+         and check status === 'success' and amount === 110000 */
+      showSuccess(d);
     },
-    onclose: function() { console.log('Flutterwave modal closed'); }
+    onClose: function() {
+      console.log('Paystack payment window closed');
+    }
   });
+  handler.openIframe();
 }
 
 /* ── PayPal ──
@@ -1803,60 +1791,133 @@ function triggerReveal() {
 }
 document.addEventListener('DOMContentLoaded', triggerReveal);
 
-/* ── Favicon — canvas-generated PNG of the 54Links logo mark ── */
-(function buildFavicon() {
-  const sizes = [16, 32, 64, 180];
-  function drawIcon(size) {
-    const c = document.createElement('canvas');
-    c.width = c.height = size;
-    const ctx = c.getContext('2d');
-    const s = size / 100;
+/* ═══ Actual 54Links logo — exact brand image, base64 encoded ═══ */
+const LOGO_DATA_URI = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QDsRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAC5ADAAIAAAAUAAAApJAEAAIAAAAUAAAAuJAQAAIAAAAHAAAAzJARAAIAAAAHAAAA1JASAAIAAAAHAAAA3JKQAAIAAAAEMDAwAJKRAAIAAAAEMDAwAJKSAAIAAAAEMDAwAKABAAMAAAABAAEAAKACAAQAAAABAAAEOKADAAQAAAABAAAEOAAAAAAyMDI2OjAxOjMwIDEwOjUxOjM4ADIwMjY6MDE6MzAgMTA6NTE6MzgAKzAzOjAwAAArMDM6MDAAACswMzowMAAA/+0AfFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAABEHAFaAAMbJUccAgAAAgACHAI/AAYxMDUxMzgcAj4ACDIwMjYwMTMwHAI3AAgyMDI2MDEzMBwCPAALMTA1MTM4KzAzMDA4QklNBCUAAAAAABAm2EJdzs1+hcgKez+0CDj5/8IAEQgEOAQ4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAMCBAEFAAYHCAkKC//EAMMQAAEDAwIEAwQGBAcGBAgGcwECAAMRBBIhBTETIhAGQVEyFGFxIweBIJFCFaFSM7EkYjAWwXLRQ5I0ggjhU0AlYxc18JNzolBEsoPxJlQ2ZJR0wmDShKMYcOInRTdls1V1pJXDhfLTRnaA40dWZrQJChkaKCkqODk6SElKV1hZWmdoaWp3eHl6hoeIiYqQlpeYmZqgpaanqKmqsLW2t7i5usDExcbHyMnK0NTV1tfY2drg5OXm5+jp6vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAQIAAwQFBgcICQoL/8QAwxEAAgIBAwMDAgMFAgUCBASHAQACEQMQEiEEIDFBEwUwIjJRFEAGMyNhQhVxUjSBUCSRoUOxFgdiNVPw0SVgwUThcvEXgmM2cCZFVJInotIICQoYGRooKSo3ODk6RkdISUpVVldYWVpkZWZnaGlqc3R1dnd4eXqAg4SFhoeIiYqQk5SVlpeYmZqgo6SlpqeoqaqwsrO0tba3uLm6wMLDxMXGx8jJytDT1NXW19jZ2uDi4+Tl5ufo6ery8/T19vf4+fr/2wBDAAICAgICAgMCAgMFAwMDBQYFBQUFBggGBgYGBggKCAgICAgICgoKCgoKCgoMDAwMDAwODg4ODg8PDw8PDw8PDw//2wBDAQIDAwQEBAcEBAcQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/2gAMAwEAAhEDEQAAAfv7bVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttWwePbPttwudO63C6u63C6u61fYZb7bVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21fJPyX9yfH/035zze6Leh4/O7otXO7otXof6C/GP2d839/tt5vv7bVttW21bbVttW21bb8se7yP1O35K7t8X9at+Sur9at+Sur9at8Ofcfm/Q7bc3obbVtvn/AE5voDfkrvX+X/WrflX+qnF7W2/NhH/Sffkr613eR+iG28b6vbattq4jw35r5L6L4L9D/W/yb/Tbz/b67beb9FttW21bbVttXitB88eS/RfBfenu35m/pl5v0G23n+7ttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVyfzu3+Ufd+L+td8lbu8n613yVq+td8lavrXfJWr613yVq+td8lavrVx8hZL9ULr56+hfnvv8AbbDr22rbattqpfyv/Rv85PoPh9ifoH2+N+fG/Q7c3pfnjv0O1fPH3HwXe+N9Xttyeptg1y35uei+RfTfnOyk+l4dt+qn5V/qp4f2e/Nj9J/zYy3889a8l9a9v4/9ENt8b+sbbVttX5m8P+oHi30Xwvxl+m1B6T5/t7beb7+21bbVttW21fnf5L615L9l+T9x+mX5m/pl431223jfVbbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW25plrvmvyqs974f2beM7o5PZt4zq9m3jOr2beM6vZt4zq9m3jOr2Z14flv0S6D8zdxex+mW/M3T/plvzw+/8Ah9aw23J6m21fPvwv9a/JX1H5v2/6Z/AHpnJ6n1nvzmrcez9K98H/AE1x+l6ttuT1ttq3y57B+cnr/LM3rL7O9j5Pzr52+wPj/Pptv1U/Kv8AVTg93fmx+k/5sZb+eeteS+te38f+iG2+N/WNtq22ry/nfnjw73/h/wBA/Z/zD/Tzg9vw3fA+9T5v9RLT5b+ffP8Ab+ruJ+Vd6nzv2P7f+ZLrPp/WDeIe3/P/AHH53+S+teS/Xfl3cfpl+Zv6ZeN9dmbz4i8/2va98D72/jvvr2f5k9k8n6vrvEPj/lvS+d+sJ+Tt1+X93e3flH2fJ6n6b7j+w8H7bbZW22rbattq22rbattq22rbattq22rbattq22rbattq22rbattq22rbattq22red+iZs/yXT+l9R9B8T+c+/RjSfnPv0Y1fnPv0Y4xs/hrfZe1w+NN9l6vjTfZer4032Xq+NN9l6vjTfZer48/ULz/2DyPpttvN+i22r4U8A9N8y+v/ACpSd9C65fPW++eT4fX+MiW1L6Hz/wB1fQH5V/p583+g3DF98c83qePeea0+r/LvSf0J5Lsflv0n5V+P/sD4/wDd+Ltv1U/Kv9VOP29+bH6T/mxlv55615L617fx/wCiG2+N/WNtq22r4G8O9x8O+w/LOu/Tz8w/088j6n8ldt7/AMOZ1H6O8XrfIXPfo5vI+o/JXfRPzt9B8T0v6d/k/wDo/wCT9N8deS+teS+p833H6Zfmb9f+R9Pxvx0QfqfNb6Z5f7w8/wB5z+e36E/lzz+hzdvUe3e78b3jb7FJ839/+UTL9DeJ9T5nyL7w+e/oTyPqNtuL2dtq22rbattq22rbattq22rbattq22rbattq22rbattq22rbattq22rbattq22rbattq22rh/wA0f1I+A/b+O8v3cb2PlOH3cauH3cauH3cauH3cauH3cauP/UL4Q+//ABfr7DbeN9bttXx3Wfa+9Dwvlv6k25vS22w6/C/gn9Vvyp+i+E33f8IfWG/F63+e3U8o2G+3Pkv65w7vonfO28f6/nvj/wB38I9/4K2/VT8o/tPk9f6J/Nj7J+Nsunzz1ryX1r1/lv0Q23xv6xttW21fA3h3uPh32H5Z136efmH+nnkfU/krtvf+H95+8fij7X+Z/Q9tvN9/xP4B/Q/88PpPgN99fAv3vL8xeS+teS93kXAJa6Yt/TfMvfMOn7dsRk+Q/Vd8F/elL1+b+V++lPnz6f8AOej9e+bcj/c/s35ZOuL2P1g3yr9VeH9lttj17bVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21M/FOz+X/AIn9E9k3je+Z+v8AZN43q9k3jer2r2f4u+kvovlPUtt91+b7bVttWrLMUvyzvl6h+p/Of0U9W/Mz9D/G+r6TZt5/u8r+ZHv3gP035zvp35i+/wB1+AN3G6vL4fdxq4fdxq4fWlXrhsTtFb0ThvXfIuL2fPPWvJfWunz/ANENt8b+sbbVttXwN4d7j4d9h+Wdd+nn5h/p55H1P5K7b3/h/pP7X+KPtf5f9F228/3fJPzw/Q/88PpPgd97/BH3vJ8xeS+teS93kdx9KfNf6ZeV9F+Su988D9f5n6y+uPyX+4PG+t+iNynwhxex+jTP88ff9Of0byr6q3N2/mByn2n8WfSfnyv02/Mf9E+T2fV9t8791ttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbU18f9qBxel4nvlvjtvJ+1d8VZsvtXeM/bPB7/ifrz7aZ7beh5u21bbVttXyp8gfrL8ge38b8s2TMPt/Het8jyWXp23vkpPupg/8AlP0rbbm9Lbattq+EfA/fPA/sPyy2/VT8q/1U8v6Tfmx+k/5sZb+eW1TvofhPWd5Nsev1neTavWfdvjD6d4/V5Pw73Hw7q8/rv08/MP8ATzyPqfyV23v/AA/0n9r/ABR9r/L/AKLtt5/u+Sfnh+h/54fSfA773+CPveT5i8l9a8l7vI7j9MvzN/TLxvrqz85f0t4Tk9H80HDyr+o/Nf0J+OeW+4vJ+r+AzdzwHrfMfRV/8rbm9Ho+c1r0+ZH6feS+5fN/f7beb9FttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVmjvV+VtP+p1D7vxP5n79MM+fxR+iNdY+V9NttyepttW21bbVttW21cn5F9E7fk+VX305t+Tzz0Pbj9HbZddtq22rbavP6P1zb8nk/rG2Wm8x9O03ke9c2vN5HvXNXke9c1eR9N22XXz2l9czL5V6rtlt5HvXNrzcL3W2XTtsutJ5965tcPI+86DS+b1frmZfL/UNst9tl04XnfXNvzeR9B3mlB5P6/l0+XW/1Vunz/n32W92HZtth17bVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21bbVttW21f/aAAgBAQABBQL/AN/zclKQrxHsKD/S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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKBBFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjAAACAAAAAAABCCCLAADCBGBAAAZDAAAAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALxxxxxxyoAAAAADPPiAErAAWDAAAAaAAAAADCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGYCCCCCCCBCCAAjjOOAABSgAWDAAAKAC+TCDDCViIwgkCAAAAAAAAAAAAAAAAAAAAAAACMNNKNNNNNNbAAqHGBDVhKDAWDAAApCAITL1DGDSQXzgrAAAAAAAAAAAAAAAAAAAAAAAAAAAKCCCCCCRAASgApBpSBBAeDAAApCAiALXDSWICFSxCAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAhAAAUxkAjECCCCBdDAAApCACAqXDDImBSDCEAAAAAAAAAAAAAAAAAAAAAAAAAAAAxyz5zAAAAHAxEBAAAAAWDyympCACAqXDCxAgJyFTAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBiAAAAAAgRDAAAAQDTxxxhwDxDARgSCAxgRxwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8QAMxEBAQEAAwABAgUFAQEAAQEJAQARITEQQVFhIHHwkYGhsdHB4fEwQFBgcICQoLDA0OD/2gAIAQMRAT8Q/wD7AkfER/8ArbI3+aZpn8MDE2f/AOCeT+qSB72k8hPR9BBBBBABvAbCCOxGhEXvpQB/fDGMYxjP4AQ8yyy+kIlPYhEBKHEQoeHTzAAFWd1A+z+93iEHFmZmY9hLbDv/AIiUWiYBCIgDre95qA4sMY8AlPS3ft7ERERKt/NuownKoOy1eGoiAd4oNr37H/0fwP8A+xoNkd3WK88677MSIj9+zEQFIUC01rh676p+vrgPhlaPweXz4Q2NEL+AAdlAUhQBTe8A13Z55iQBfPJqeAaaAAAPhPDIANJg+CeEq+L4jSE//9oACAECEQE/EP8A+zW/bZdtqrVlXX/n7S8vHqG22+e9vuZ7zJW3yP8AnpJJKeV/9HN3Tzsljn/7v2nyJPBs+/vnbuAAA395r9eJ/wCHslz/AL6mI3J037uu0P8A/wD/AJ/5rfpmXb/puXLCXXY1ruu4vIiM9v3kr3//AH4uXkufvY/kHzeCvgg8ERz/ALf/APsMd7Z5Ev8Al5Ir9b//AK3v/Uf3z77/AP8A359//wD++d//APn9f//aAAgBAQABPxD/APzzedw4PkL0XeIX4d/yz+7/AJZ/d/yz+7/ln93/ACz+7/nn939Qtahk/wD2/wD5xZyI8/uy/wDyPLFaR8//APV1UgipNr/Z3++vyzh6+oXMMl7R9YvEn/5nABdBpecc7z/4Rhhx6ilwJ+n/APYH0OBxX8a8Z/8AkL74UqVKlSpQw609V9LOr9v/ANBgmD/85qkUsJdf7BA+vL/+fXb/AKjr/qdP9u3z7tV/+xiFkehvzIEnuOzf+ryg23oU9CnoU9CnoU9CnoU9CnoU9CnoU9CnoU/gjnmv9an/AKM5GSGeGSP/AMoB3/8AO+oigN+OduPb+vF//Q53e1N2/wCrfNlyyeR2fPsxKYI9P/7GD0M/1AD/AP0DP+5//B//AJU5g+awj/q6S4zFf7qk6+1R7VHtUe1Q23XwCdw7P/wzuHB8h/8AoM7fILcq7f8ASS653ze9MWQPYz15T4QP/wBjYfQ9rUHgGXcrwfonf/zuOOOOOOOOOOOOGrPp+4HG7OzkgZ/z8r/8/wDyvseTf8z3A/8Ay5kDPy3MjfO/9y6V8X3Yhobh/WJ/+ddv++nBVC//AMh2ZXy7q/8A4OGEaMx937DWM/bBm9GhwoxX/wAOhq/93dKm/wALPBDf45//ACPQ4m+qPeFAa3zWkP8AxD6z8sf+7OCerG4+HCUVtz9web/88pj6QT/z4qihRotQexyk+B9djfYVPvo//rF8aso0WhB3/wCiBcux55555555555555555551lKcLT4CNKg1//DZ/1xf9EDxZ+xBNGEx/ipv/AFYwmFrII6T+o8FoRp/VkfqjzP8A+Ham2oX4n/5Xsf8AR+W1snf/ANFqkTWu3/Z+zCuRCHP5XMYalG/571//AIR9LnzRQhNePZznTz4f/j+hqzfAhX5/hc//ACVSLkn8HuHTm6fm0vjOdU8JnY//AIsEnbb0CKtriFd5X+nLpm44/wD6w4KhV8vpv5//AEbUcekfn2KgNu//AMPof/yOdwdfWxTSrjau9s/D834P16/9pMnCCJ946MW/5dLjb4sIpv8A9HIFa7f9n7Vc0X4V/wD1sW3/APCpBS7jowHJIs/CWF/+H+hkw0Nx4/WLp/1SeR/45e+X/wAAj/z6X5b/AGhpfTF+1bD/AAv6dL/tuwOQB/5/skti7/8A1jJi2ecTNP5//H58+fPnyJKRT5Pj7n/5v/8A/wD/AP8Ap/yjJnz/APi/lJUf9uKkHAp39H8s3yRCP8/061sXp+xk/wDwUhaPTiOrcUHWG8h/qTv/ACbjjQf5Vfv/APXGevfN6TvTT56ng9P/AOjVrt/2fsM5WKsl2RCeV8D4T7f+ouxetdMjX5z/AKvhiXj/APAXehu8vOHj+/8ALI//AIOpVx9tjZ1v6MMIrUf/AIGMb56Ii9fO92JDSf8ADNrHUXeCX/BjxG/4ffr3/wCt/wD7gMlM/H/+fqVcfb0j8+xUBt1/+H0j3TPNxX/MG7YJUb/iVH/4EuDMB+T/AN4JJ2Tf0XUwtU7x+D/nH/XdNDZqD2h/z6l/n/8A0vWu3/Z+2MxOnztiR/7/AOvvL/8AAPRKilvEp1j/AKzGq1Bkrqo3R/1QPhif8Xj5/wDwOIEnED/Y6RbpMT0l+eyGCz0Fz3+v/wCuGHg55se+v1//ADtFPlyeeeeeeeeeeeed5SnC0+QjSoMf/wAuJH4mIf8AsLR3R/8A4wSFomvzEYlFpEiR/eoi5fX/AODaHQ+IovIifP8Ap+f/AKbf9n7fa6+2w09672fOGBmdaU3VWJ/3YYYXXphnImyZEhh3GmEf/hVpFj00Mq59uPHU89//AK59W83P/wDIgMXbrrrrrpz7p/8AyYB2cFEHRI437f8Aq3bEftnnet/+Cmcs/if/AOqVXzB6Nf8AZ+32uvoaefvT/wAPP+3Ljj1T/wDDt/bsgcnL/pV9oapURIiv/wBeOlps2ue8SCmaGrP1+v8A8mUgf/kGrDW/7QDECnRZeStZ7RzfMDszJ9b/AMSDCOfyjKvLxL+P+4+/eP4f5rv+v/8Al+eeeeeVnfr/AJIuf4OZjOpf/pnv+z9vtdfQ+CI/cZj/AKHUcctcaHIZ8cen6QSFV0K4/wCpctg/is9wE/w//f8Ak6iZ7vv/AKDr/l/mX/6440YOYkr+pn9hJ/8AjmZmZCs+O+wC/HXbgf8A5Ln/AB2BP+Pxf/gqr9VcntRbd5KcF/7CFt8PB/8A9F6xrt/UDpwS111111m1SlP/AOhift9rr6HwmXpf/wDAdPaOPI7Pts4qHSj3V498OTf+jIFGkr0+/wDyChf+LZC+XsOA6Rf3/wD6Cb7r0TZe0p//AFy/JazF/wDh6hrZ0SpUqAHrvP8AxE//AMyfWIChlziYl/z8j4f/AMXv4e2umf3Q/Ap9GD6D/wDVMa7fmn7fa6+hmwK6xM/xqfX/AOBgHz3yBh2y67AHgL/luf8A43WDar084W5+ghcH+3/Rzf8A9dZ6SrlPf8//AIcmHGWDp/8AzlLzPOD/AMbNvp/7H+iAbPALF/ttl85L/wDKf/lHWSf93faojob7Gzkrj/rkPsedD+Bfao9qj2qPao9qj2qPao5rpUtA9izIjSZx/wCO32qPNA8n5LHcf89qj2qNvMtf5uOn/wCBF3gGc932N9qj2qJngX5B578313LB7x3rX2qPRiCsNMz4/wDwOr33DuMfvfao9qjwpDoL+vV+0BhWl/8AhcUn/gzRXyzyMP8A5iJv2Xeo8B/e+/8A/wBecenn4lP43/LP6v8Aln9X/LP6rap5HfEH/wDnv3//2Q==";
 
-    // Background circle — teal
-    ctx.beginPath();
-    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
-    ctx.fillStyle = '#03647C';
-    ctx.fill();
+/* ═══════════════════════════════════════════════════════════
+   LOGO RENDERER — uses the actual 54Links brand image.
+   Crops precisely, renders to canvas for nav, footer & favicon.
+   ═══════════════════════════════════════════════════════════ */
+(function renderLogos() {
+  const img = new Image();
 
-    // Helper: rounded rectangle
-    function rr(x, y, w, h, r) {
-      const rx = x*s, ry = y*s, rw = w*s, rh = h*s, rr = r*s;
-      ctx.beginPath();
-      ctx.moveTo(rx + rr, ry);
-      ctx.lineTo(rx + rw - rr, ry);
-      ctx.quadraticCurveTo(rx + rw, ry, rx + rw, ry + rr);
-      ctx.lineTo(rx + rw, ry + rh - rr);
-      ctx.quadraticCurveTo(rx + rw, ry + rh, rx + rw - rr, ry + rh);
-      ctx.lineTo(rx + rr, ry + rh);
-      ctx.quadraticCurveTo(rx, ry + rh, rx, ry + rh - rr);
-      ctx.lineTo(rx, ry + rr);
-      ctx.quadraticCurveTo(rx, ry, rx + rr, ry);
-      ctx.closePath();
-      ctx.fill();
+  img.onload = function () {
+    const IW = img.naturalWidth;   // full image width  (≈1080)
+    const IH = img.naturalHeight;  // full image height (≈1080)
+
+    /* ── Crop coordinates (% of full image dimensions) ──────────
+       The 54Links logo sits roughly centred in the white-bg JPEG.
+       Icon (bars only) : left ~15.7% → 28.5%  |  top ~43.5% → 57%
+       Full logo (icon+text): left ~15.7% → 83%  |  top ~43.5% → 57%
+       These were measured from the actual high-res logo image.     */
+    const CX  = IW * 0.155;   // crop left edge
+    const CY  = IH * 0.435;   // crop top edge
+    const CW  = IW * 0.675;   // crop width  (icon + "54Links" wordmark)
+    const CH  = IH * 0.135;   // crop height
+    const ICX = IW * 0.155;   // icon-only left edge
+    const ICY = IH * 0.435;   // icon-only top edge
+    const ICW = IW * 0.128;   // icon-only width
+    const ICH = IH * 0.135;   // icon-only height
+
+    /* ── Helpers ────────────────────────────────────────────── */
+    function cropTo(canvas, sx, sy, sw, sh, dw, dh, bgColor) {
+      canvas.width  = dw;
+      canvas.height = dh;
+      const ctx = canvas.getContext('2d');
+      if (bgColor) { ctx.fillStyle = bgColor; ctx.fillRect(0, 0, dw, dh); }
+      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, dw, dh);
     }
 
-    // 5 stacked bars — white, narrowing downward (54Links logo shape)
-    ctx.fillStyle = '#FFFFFF';
-    rr(18, 12, 64, 11, 5.5);  // bar 1 — widest
-    rr(13, 27, 74, 11, 5.5);  // bar 2
-    rr(15, 42, 70, 11, 5.5);  // bar 3
-    ctx.fillStyle = '#F36E24'; // orange accent bar
-    rr(22, 57, 40, 11, 5.5);  // bar 4 — orange, narrower
-    ctx.fillStyle = '#FFFFFF';
-    rr(19, 72, 32, 11, 5.5);  // bar 5 — narrowest
+    function darkInvert(canvas) {
+      /* Converts teal-on-white to white-on-transparent for dark bg */
+      const ctx = canvas.getContext('2d');
+      const d   = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const px  = d.data;
+      for (let i = 0; i < px.length; i += 4) {
+        const r = px[i], g = px[i+1], b = px[i+2];
+        const brightness = (r + g + b) / 3;
+        /* Near-white pixels → fully transparent */
+        if (brightness > 220) { px[i+3] = 0; continue; }
+        /* Teal pixels (#03647C ≈ r<60, g>80, b>100) → white */
+        if (r < 80 && g > 70 && b > 80) {
+          px[i]=255; px[i+1]=255; px[i+2]=255; px[i+3]=255;
+          continue;
+        }
+        /* Orange pixels → keep orange, solid */
+        if (r > 180 && g < 130 && b < 60) {
+          px[i+3] = 255; continue;
+        }
+        /* Other dark pixels → make lighter */
+        px[i]=255-r; px[i+1]=255-g; px[i+2]=255-b; px[i+3]=255;
+      }
+      ctx.putImageData(d, 0, 0);
+    }
 
-    return c.toDataURL('image/png');
-  }
+    /* ── Nav logo (light mode) — full logo, white bg ──────── */
+    const navCanvas = document.getElementById('navLogoCanvas');
+    if (navCanvas) {
+      const H = 34;
+      const W = Math.round(H * CW / CH);
+      cropTo(navCanvas, CX, CY, CW, CH, W, H, '#ffffff');
+      navCanvas.style.width  = W + 'px';
+      navCanvas.style.height = H + 'px';
 
-  // Set 32×32 as browser favicon
-  const png32 = drawIcon(32);
-  const tag = document.getElementById('faviconTag');
-  if (tag) tag.href = png32;
+      /* Dark-mode version: re-render with transparent/white bar treatment */
+      function updateNavForTheme() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          cropTo(navCanvas, CX, CY, CW, CH, W, H, 'transparent');
+          darkInvert(navCanvas);
+        } else {
+          cropTo(navCanvas, CX, CY, CW, CH, W, H, '#ffffff');
+        }
+      }
+      updateNavForTheme();
+      /* Re-run on theme toggle */
+      window._updateNavLogo = updateNavForTheme;
+    }
 
-  // Set 180×180 as Apple touch icon
-  const png180 = drawIcon(180);
-  const apple = document.getElementById('appleTouchIcon');
-  if (apple) apple.href = png180;
+    /* ── Footer logo — white bars on transparent (dark bg) ── */
+    const ftCanvas = document.getElementById('footerLogoCanvas');
+    if (ftCanvas) {
+      const H = 34;
+      const W = Math.round(H * CW / CH);
+      cropTo(ftCanvas, CX, CY, CW, CH, W, H, 'transparent');
+      darkInvert(ftCanvas);
+      ftCanvas.style.width  = W + 'px';
+      ftCanvas.style.height = H + 'px';
+    }
+
+    /* ── Favicon 32×32 ───────────────────────────────────── */
+    function makeFavicon(size) {
+      const fc  = document.createElement('canvas');
+      fc.width  = fc.height = size;
+      const ctx = fc.getContext('2d');
+      /* Teal circle */
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size/2, 0, Math.PI*2);
+      ctx.fillStyle = '#03647C';
+      ctx.fill();
+      /* Icon centred with padding */
+      const pad = size * 0.1;
+      const iSize = size - pad*2;
+      const aspect = ICW / ICH;
+      const iW = iSize * aspect > iSize ? iSize : iSize * aspect;
+      const iH = iW / aspect;
+      const ox = (size - iW) / 2;
+      const oy = (size - iH) / 2;
+      ctx.drawImage(img, ICX, ICY, ICW, ICH, ox, oy, iW, iH);
+      return fc.toDataURL('image/png');
+    }
+
+    const fav   = document.getElementById('faviconTag');
+    const apple = document.getElementById('appleTouchIcon');
+    if (fav)   fav.href   = makeFavicon(32);
+    if (apple) apple.href = makeFavicon(180);
+  };
+
+  img.onerror = function() { console.warn('54Links logo image failed to load'); };
+  img.src = LOGO_DATA_URI;
 })();
 </script>
 </body>
